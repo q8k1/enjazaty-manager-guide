@@ -391,7 +391,7 @@
   welcome.id = "tourWelcome";
   welcome.setAttribute("aria-labelledby","welcomeTitle");
   welcome.setAttribute("aria-describedby","welcomeDescription");
-  const title = textElement("h2","مرحباً بك في دليل المدير");
+  const title = textElement("h2","مرحباً بك في دليل المسؤول");
   title.id = "welcomeTitle";
   title.dir = "rtl";
   const description = textElement("p","اضغط ابدأ لبدء الشرح التفاعلي لهذه الصفحة.");

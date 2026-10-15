@@ -1,6 +1,6 @@
-# دليل المدير — نظام إنجازاتي
+# دليل المسؤول — نظام إنجازاتي
 
-Interactive Arabic/English manager manual for Enjazaty (إنجازاتي), with seven HTML/CSS screen recreations, guided tours, and demonstration popups. No screenshot images or uploads are needed.
+Interactive Arabic/English supervisor manual for Enjazaty (إنجازاتي), with seven HTML/CSS screen recreations, guided tours, and demonstration popups. No screenshot images or uploads are needed.
 
 **Open the guide:** https://q8k1.github.io/enjazaty-manager-guide/multipage/index.html
 
@@ -8,13 +8,13 @@ Pages follow the app sidebar: Home → Add Task → Calendar → Reward → Assi
 
 Enable GitHub Pages under **Settings → Pages → Deploy from a branch → main / (root)**.
 
-The shared assets originate from the [worker guide](https://github.com/q8k1/enjazaty-guide/tree/e4b004b9680a7e5616df73d06d6d7c81ab5c43bb/multipage) (the supplied `main` reference was unavailable). `multipage/styles.css` remains verbatim; only the sample names and task text in `multipage/script.js` have been anonymized, with its behavior unchanged. Manager-only additions are isolated in `manager.css` and `manager.js`.
+The shared assets originate from the [worker guide](https://github.com/q8k1/enjazaty-guide/tree/e4b004b9680a7e5616df73d06d6d7c81ab5c43bb/multipage) (the supplied `main` reference was unavailable). `multipage/styles.css` remains verbatim; only the sample names and task text in `multipage/script.js` have been anonymized, with its behavior unchanged. Supervisor-only additions are isolated in `manager.css` and `manager.js`.
 
-The manager stylesheet uses a left-to-right layout throughout the guide: navigation, main content, headers, forms, dialogs, landing page, and footer. Arabic tour explanations retain right-to-left text. Text is enlarged, and the bottom-left **?** button has a glowing heartbeat (disabled when reduced motion is preferred). Supervisee Tasks has a team-only empty state without an Add Enjaz action; personal achievement creation remains under My tasks.
+The supervisor stylesheet uses a left-to-right layout throughout the guide: navigation, main content, headers, forms, dialogs, landing page, and footer. Arabic tour explanations retain right-to-left text. Text is enlarged, and the bottom-left **?** button has a glowing heartbeat (disabled when reduced motion is preferred). Supervisee Tasks has a team-only empty state without an Add Enjaz action; personal achievement creation remains under My tasks.
 
 Supervisee Tasks includes seven task cards from Reward, with employee names, task types, priorities, dates, and Open details. Both screens use `multipage/tasks.js` as their shared task data. Team cards support search, date/status filters, and grid/list display; no-results never offers Add Enjaz.
 
-All seven guides and the landing page share Reward's dark-blue Enjazaty header, pale background, rounded panels, and navy active tabs. Reward (page 4) additionally follows the supplied manager screenshot's table layout, three green reward shades, centered pagination, and right-aligned footer. Its screenshot-specific styling is scoped to `.reward-screen`; guide navigation and the interactive walkthrough remain available. Details uses the selected row's data; unseen task descriptions and attachments are not reproduced.
+All seven guides and the landing page share Reward's dark-blue Enjazaty header, pale background, rounded panels, and navy active tabs. Reward (page 4) additionally follows the supplied supervisor screenshot's table layout, three green reward shades, centered pagination, and right-aligned footer. Its screenshot-specific styling is scoped to `.reward-screen`; guide navigation and the interactive walkthrough remain available. Details uses the selected row's data; unseen task descriptions and attachments are not reproduced.
 
 All personal names are fictional examples, including account labels, chart labels, employees, assignees, and project creators. Task descriptions and project/department examples are deliberately generic, without operational system names or identifiers. Enjazaty branding and the university copyright credit are retained.
 
