@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>5. ＋ Assign Task | دليل المدير — نظام إنجازاتي</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="manager.css">
+<script src="script.js" defer></script>
+<script src="manager.js" defer></script>
+</head>
+<body>
+<header class="guide-header"><h1>5. ＋ Assign Task</h1><a href="index.html">دليل المدير — جميع الأدلة</a></header>
+<div class="app">
+<nav class="side" aria-label="الأدلة">
+  <a href="01-home.html" id="nav-home">1. ⌂ Home</a>
+  <a href="02-add-task.html" id="nav-add">2. 🎖 Add Task</a>
+  <a href="03-calendar.html" id="nav-cal">3. ▤ Calendar</a>
+  <a href="04-reward.html" id="nav-reward">4. ★ Reward</a>
+  <a href="05-assign-task.html" id="nav-assign" class="active" aria-current="page">5. ＋ Assign Task</a>
+  <a href="06-view-enjazaty.html" id="nav-view">6. ☰ View Enjazaty</a>
+  <a href="07-settings.html" id="nav-settings">7. ⚙ Settings</a>
+</nav>
+<main class="main">
+<section class="page" id="assign">
+  <div class="box" style="padding:14px">
+    <div class="manager-heading"><h2>أسند مهام لفريقك</h2><p lang="en">Assign Tasks to Your Team</p></div>
+    <form class="form" id="assignForm">
+      <div class="manager-form">
+        <div id="assignTo"><label class="req" for="assignee">Assign To</label><select id="assignee" required><option value="">Select employee</option><option>Employee 01</option><option>Employee 02</option><option>Employee 03</option></select></div>
+        <div id="assignCategory"><label class="req" for="assignCat">Task Category</label><select id="assignCat" required><option value="">Select category</option><option>Enjazaty</option><option>Meeting</option><option>Technical Infrastructure</option><option>Deployment</option></select></div>
+        <div id="assignTitle"><label class="req" for="assignName">Task Title</label><input id="assignName" required></div>
+        <div id="assignDetail"><label class="req" for="assignDescription">Task Detail</label><textarea id="assignDescription" required></textarea></div>
+        <fieldset id="assignPriority"><legend>Priority</legend><div class="radio-options">
+          <label style="color:#15803d"><input type="radio" name="priority" value="Low" checked>Low</label>
+          <label style="color:#b45309"><input type="radio" name="priority" value="Medium">Medium</label>
+          <label style="color:#b91c1c"><input type="radio" name="priority" value="High">High</label>
+        </div></fieldset>
+        <fieldset id="assignType"><legend>Taskid</legend><div class="radio-options">
+          <label><input type="radio" name="taskid" value="Design" required>Design</label>
+          <label><input type="radio" name="taskid" value="Development">Development</label>
+          <label><input type="radio" name="taskid" value="Documentation">Documentation</label>
+          <label><input type="radio" name="taskid" value="Meeting">Meeting</label>
+          <label><input type="radio" name="taskid" value="Support">Support</label>
+          <label><input type="radio" name="taskid" value="TrobelShoot">TrobelShoot</label>
+        </div></fieldset>
+        <div id="assignFile"><label for="assignUpload">Upload File</label><input id="assignUpload" type="file" multiple></div>
+      </div>
+      <button class="btn-dark manager-submit" id="assignSubmit" type="submit">Submit</button>
+    </form>
+  </div>
+  <p class="demo-note">نموذج توضيحي فقط، لا تُرسل البيانات أو الملفات / Demo only; data and files are not sent.</p>
+  <p class="demo-result" id="assignResult" role="status"></p>
+</section>
+<nav class="guide-links" aria-label="تتابع الأدلة"><a href="04-reward.html" rel="prev">السابق: ★ Reward</a><a href="06-view-enjazaty.html" rel="next">التالي: ☰ View Enjazaty</a></nav>
+<footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+</main>
+</div>
+<div id="spot" hidden></div>
+<div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
+  <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
+  <div class="en" id="tipEn" lang="en"></div><div class="ar" id="tipAr"></div>
+  <div class="nav"><button class="back" id="tipBack">Back</button><span class="count" id="tipCount"></span><button class="next" id="tipNext">Next</button></div>
+</div>
+<button id="help" title="Show guide" aria-label="فتح الشرح التفاعلي">?</button>
+<script type="application/json" id="guide-steps">
+[
+{"page":"assign","el":"nav-assign","en":"Managers use Assign Task to give work to team members.","ar":"يستخدم المدير Assign Task لإسناد العمل إلى أعضاء الفريق."},
+{"page":"assign","el":"assignTo","en":"Choose the employee who will receive this task.","ar":"اختر الموظف الذي ستُسند إليه المهمة."},
+{"page":"assign","el":"assignCategory","en":"Choose the task category or project.","ar":"اختر تصنيف المهمة أو المشروع."},
+{"page":"assign","el":"assignTitle","en":"Write a short, clear title for the assigned task.","ar":"اكتب عنواناً قصيراً وواضحاً للمهمة المسندة."},
+{"page":"assign","el":"assignDetail","en":"Explain what needs to be done and the expected result.","ar":"اشرح العمل المطلوب والنتيجة المتوقعة."},
+{"page":"assign","el":"assignPriority","en":"Choose Low, Medium or High priority.","ar":"اختر أولوية منخفضة أو متوسطة أو عالية."},
+{"page":"assign","el":"assignType","en":"Taskid selects one task type: Design, Development, Documentation, Meeting, Support or Troubleshoot.","ar":"يحدد Taskid نوعاً واحداً للمهمة: تصميم أو تطوير أو توثيق أو اجتماع أو دعم أو معالجة مشاكل."},
+{"page":"assign","el":"assignFile","en":"Optional: choose supporting files for your team member. This demo does not upload them.","ar":"اختياري: اختر ملفات داعمة لعضو الفريق. لا يرفع هذا الدليل الملفات."},
+{"page":"assign","el":"assignSubmit","en":"Submit assigns the task in the real system. Here it only displays a demo confirmation; * fields are required.","ar":"يسند Submit المهمة في النظام الفعلي. هنا يعرض تأكيداً توضيحياً فقط؛ الحقول المعلّمة بـ * إلزامية."}
+]
+</script>
+</body>
+</html>

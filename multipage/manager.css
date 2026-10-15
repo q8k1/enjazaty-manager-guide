@@ -1,0 +1,41 @@
+.manager-heading{text-align:center;margin-bottom:14px}
+.manager-heading h2{font-size:18px;margin:4px 0;color:#0b2a4a}
+.manager-heading p{margin:4px 0;color:#0b2a4a}
+.manager-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid #ddd;margin:16px 0 10px}
+.manager-tabs button{background:none;border:0;padding:8px 12px;font-size:12px;color:#0b2a4a;cursor:pointer;border-bottom:2px solid transparent}
+.manager-tabs button.active{border-bottom-color:#fbbf24;font-weight:600}
+.table-scroll{overflow-x:auto}
+.manager-table{width:100%;border-collapse:collapse;direction:ltr;text-align:left;font-size:11px}
+.manager-table th{background:#f8fafc;color:#0b2a4a;font-weight:600}
+.manager-table th,.manager-table td{padding:10px 8px;border-bottom:1px solid #e5e7eb}
+.manager-table td{overflow-wrap:anywhere}
+.reward-points{display:flex;gap:4px}
+.reward-points button{background:#15803d;color:#fff;border:0;border-radius:4px;padding:5px 9px;cursor:pointer;font-size:11px}
+.reward-points button[aria-pressed="true"]{outline:2px solid #0b2a4a;outline-offset:2px}
+.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:4px;justify-content:space-between;padding:12px;direction:ltr}
+.pagination .pages{display:flex;flex-wrap:wrap;gap:4px}
+.pagination [aria-current="page"]{background:#0b2a4a;color:#fff}
+.manager-form{border:1px solid #eee;border-left:3px solid #fbbf24;border-radius:6px;padding:4px 20px 16px}
+.manager-form textarea{width:100%}
+.manager-form fieldset{border:0;margin:14px 0 4px;padding:0}
+.manager-form legend{font-size:11px;color:#374151;margin-bottom:6px}
+.manager-form .radio-options{display:flex;flex-wrap:wrap;gap:12px;direction:ltr}
+.manager-form .radio-options label{display:flex;align-items:center;gap:4px;margin:0}
+.manager-form input[type="radio"]{width:auto}
+.manager-submit{width:100%;margin-top:10px;padding:9px}
+.project-fields{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.project-fields>div{flex:1 1 200px}
+.project-fields label{margin-top:4px}
+.btn-reject{color:#b91c1c;border-color:#b91c1c}
+.review-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.demo-note{font-size:11px;color:#6b7280;margin:10px 0}
+.demo-result{color:#0b2a4a;font-size:12px}
+.empty-state{text-align:center;padding:30px;margin:12px 0}
+.manager-modal .form{padding:0}
+.manager-modal .form label{margin-top:12px}
+.manager-modal .form input,.manager-modal .form select{font-size:11px}
+@media(max-width:700px){
+ .manager-table{min-width:720px}
+ .manager-heading h2{font-size:16px}
+ .manager-form{padding:4px 12px 16px}
+}
