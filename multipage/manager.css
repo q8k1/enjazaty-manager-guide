@@ -1,11 +1,11 @@
 .app{direction:ltr}
-.main{direction:rtl}
+.main{direction:ltr}
 .side{direction:ltr;width:200px}
-body{font-size:16px}
+body{font-size:16px;direction:ltr;text-align:left}
 .side a{font-size:16px;padding:10px 12px}
 .guide-header h1{font-size:24px}
 .guide-links{padding-bottom:90px}
-.footer{font-size:14px}
+.footer{font-size:14px;direction:ltr;text-align:left}
 .btn,.btn-dark,.btn-yellow,.rpill,.chips button{font-size:14px}
 .form label,.form input,.form select,.form textarea{font-size:15px}
 .section-h,.stat span,.card .foot,.pill,.badge,.card h4 small{font-size:14px}
@@ -22,7 +22,7 @@ body{font-size:16px}
 #tip{font-size:16px;width:340px}
 #tip .nav button{font-size:14px}
 #tip .count{font-size:13px}
-#help{width:60px;height:60px;font-size:28px;font-weight:700;animation:guide-heartbeat 2.4s ease-in-out infinite;box-shadow:0 0 18px rgba(79,70,229,.55)}
+#help{left:16px;right:auto;width:60px;height:60px;font-size:28px;font-weight:700;animation:guide-heartbeat 2.4s ease-in-out infinite;box-shadow:0 0 18px rgba(79,70,229,.55)}
 #help:hover,#help:focus-visible{animation-play-state:paused}
 @keyframes guide-heartbeat{
  0%,45%,100%{transform:scale(1);box-shadow:0 0 18px rgba(79,70,229,.55)}

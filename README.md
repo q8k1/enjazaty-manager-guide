@@ -10,7 +10,7 @@ Enable GitHub Pages under **Settings → Pages → Deploy from a branch → main
 
 The shared `multipage/styles.css` and `multipage/script.js` are copied verbatim from the [worker guide](https://github.com/q8k1/enjazaty-guide/tree/e4b004b9680a7e5616df73d06d6d7c81ab5c43bb/multipage) (the supplied `main` reference was unavailable). Manager-only additions are isolated in `manager.css` and `manager.js`.
 
-The manager stylesheet places desktop navigation on the left, enlarges text, and adds a glowing heartbeat to the **?** button (disabled when reduced motion is preferred). Supervisee Tasks has a team-only empty state without an Add Enjaz action; personal achievement creation remains under My tasks.
+The manager stylesheet uses a left-to-right layout throughout the guide: navigation, main content, headers, forms, dialogs, landing page, and footer. Arabic tour explanations retain right-to-left text. Text is enlarged, and the bottom-left **?** button has a glowing heartbeat (disabled when reduced motion is preferred). Supervisee Tasks has a team-only empty state without an Add Enjaz action; personal achievement creation remains under My tasks.
 
 All data and actions are demonstrations, not connected to the real system. Changes reset when you reload; no files or form data are sent anywhere.
 
