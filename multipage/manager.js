@@ -313,6 +313,7 @@
     else if (step?.modal === "project") showProject(projects[0],false);
     else closeModal(false);
     if (step?.el === "emptyTasks") byId("teamTasks").click();
+    if (step) byId(step.el)?.scrollIntoView({block:"center",behavior:"instant"});
   }
   const observer = new MutationObserver(syncTour);
   observer.observe(tip, {attributes:true,attributeFilter:["hidden"]});
