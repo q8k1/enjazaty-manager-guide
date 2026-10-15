@@ -47,10 +47,10 @@
   const rewardTasks = rewardRows ? Array.from({length:38}, (_, index) => {
     const cells = rewardTemplates[index % rewardTemplates.length].cells;
     return {
-      id:index, employee:`Employee ${String(index + 1).padStart(2,"0")}`,
+      id:index, employee:cells[1].textContent,
       title:cells[2].textContent, type:cells[3].textContent,
       priority:cells[4].textContent, date:cells[5].textContent,
-      description:index % 7 === 0 ? "Prepare the manager and employee user manual." : cells[2].textContent,
+      description:cells[2].textContent,
       status:index === 37 ? "Assigned" : "Submitted", points:0
     };
   }) : [];

@@ -10,8 +10,11 @@
 <script src="script.js" defer></script>
 <script src="manager.js" defer></script>
 </head>
-<body>
-<header class="guide-header"><h1>4. ★ Reward</h1><a href="index.html">دليل المدير — جميع الأدلة</a></header>
+<body class="reward-screen">
+<header class="guide-header">
+  <a class="reward-brand" href="index.html" aria-label="دليل المدير — جميع الأدلة"><span aria-hidden="true">🏅</span><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
+  <span class="reward-account"><span aria-hidden="true">♙</span> 22401076 <span aria-hidden="true">⌄</span></span>
+</header>
 <div class="app">
 <nav class="side" aria-label="الأدلة">
   <a href="01-home.html" id="nav-home">1. ⌂ Home</a>
@@ -26,50 +29,49 @@
 <section class="page" id="reward">
   <div class="manager-heading">
     <h2>حفّز فريقك بنقاط التميز ⭐</h2>
-    <p lang="en">Motivate Your Team with Excellence Points</p>
+    <p lang="en">Motivate Your Team with Excellence Points ⭐</p>
   </div>
   <div class="manager-tabs" id="rewardTabs" role="group" aria-label="حالة المهمة">
-    <button class="active" data-status="Submitted" aria-pressed="true">Submitted / المسجلة</button>
-    <button data-status="Assigned" aria-pressed="false">Assigned / المسندة</button>
-    <button data-status="Returned" aria-pressed="false">Returned / المعادة</button>
-    <button data-status="Rejected" aria-pressed="false">Rejected / المرفوضة</button>
+    <button class="active" data-status="Submitted" aria-pressed="true"><b>Submitted</b><span lang="ar" dir="rtl">المسجلة</span></button>
+    <button data-status="Assigned" aria-pressed="false"><b>Assigned</b><span lang="ar" dir="rtl">المسندة</span></button>
+    <button data-status="Returned" aria-pressed="false"><b>Returned</b><span lang="ar" dir="rtl">المعادة</span></button>
+    <button data-status="Rejected" aria-pressed="false"><b>Rejected</b><span lang="ar" dir="rtl">المرفوضة</span></button>
   </div>
-  <div class="box">
+  <div class="box reward-panel">
     <div class="table-scroll" id="rewardTable">
       <table class="manager-table" aria-label="إنجازات الفريق">
         <thead><tr><th scope="col">Details</th><th scope="col">Employee</th><th scope="col">Task</th><th scope="col">Task Type</th><th scope="col">Priority</th><th scope="col">Date</th><th scope="col">Reward</th></tr></thead>
         <tbody id="rewardRows">
-          <tr><td><button class="btn-yellow" id="rewardDetails" data-detail="0">Details</button></td><td>Employee 01</td><td>User Manual</td><td>DOCUMENTATION</td><td>Medium</td><td>06/10/2026</td><td><div class="reward-points" id="rewardPoints"><button data-reward="0" data-points="1">1</button><button data-reward="0" data-points="2">2</button><button data-reward="0" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="1">Details</button></td><td>Employee 02</td><td>Testing Loading</td><td>TROUBLESHOOT</td><td>Low</td><td>05/10/2026</td><td><div class="reward-points"><button data-reward="1" data-points="1">1</button><button data-reward="1" data-points="2">2</button><button data-reward="1" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="2">Details</button></td><td>Employee 03</td><td>launching enjazaty</td><td>DEVELOPMENT</td><td>High</td><td>04/10/2026</td><td><div class="reward-points"><button data-reward="2" data-points="1">1</button><button data-reward="2" data-points="2">2</button><button data-reward="2" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="3">Details</button></td><td>Employee 04</td><td>Meeting</td><td>MEETING</td><td>Low</td><td>03/10/2026</td><td><div class="reward-points"><button data-reward="3" data-points="1">1</button><button data-reward="3" data-points="2">2</button><button data-reward="3" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="4">Details</button></td><td>Employee 05</td><td>Technical Infrastructure</td><td>SUPPORT</td><td>High</td><td>02/10/2026</td><td><div class="reward-points"><button data-reward="4" data-points="1">1</button><button data-reward="4" data-points="2">2</button><button data-reward="4" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="5">Details</button></td><td>Employee 06</td><td>Deployment</td><td>DEVELOPMENT</td><td>Medium</td><td>01/10/2026</td><td><div class="reward-points"><button data-reward="5" data-points="1">1</button><button data-reward="5" data-points="2">2</button><button data-reward="5" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="6">Details</button></td><td>Employee 07</td><td>Account Management</td><td>مهام ادارية</td><td>Low</td><td>30/09/2026</td><td><div class="reward-points"><button data-reward="6" data-points="1">1</button><button data-reward="6" data-points="2">2</button><button data-reward="6" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" id="rewardDetails" data-detail="0">Details</button></td><td>دانه عبدالكريم يوسف خاجه</td><td>Restart SIS Report Server</td><td>TROUBLESHOOT</td><td>High</td><td>07 Oct 2026</td><td><div class="reward-points" id="rewardPoints"><button data-reward="0" data-points="1">1</button><button data-reward="0" data-points="2">2</button><button data-reward="0" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="1">Details</button></td><td>دانه عبدالكريم يوسف خاجه</td><td>Non-KU Account</td><td>OTHER</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="1" data-points="1">1</button><button data-reward="1" data-points="2">2</button><button data-reward="1" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="2">Details</button></td><td>دانه عبدالكريم يوسف خاجه</td><td>Start weblogic admin consoles</td><td>TROUBLESHOOT</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="2" data-points="1">1</button><button data-reward="2" data-points="2">2</button><button data-reward="2" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="3">Details</button></td><td>نوره مناور مجبل الغيوطي الحربي</td><td>Closed BMC helix requests</td><td>SUPPORT</td><td>Medium</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="3" data-points="1">1</button><button data-reward="3" data-points="2">2</button><button data-reward="3" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="4">Details</button></td><td>نوره مناور مجبل الغيوطي الحربي</td><td>repprod1 down</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="4" data-points="1">1</button><button data-reward="4" data-points="2">2</button><button data-reward="4" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="5">Details</button></td><td>نوره مناور مجبل الغيوطي الحربي</td><td>compile &amp; upload</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="5" data-points="1">1</button><button data-reward="5" data-points="2">2</button><button data-reward="5" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="6">Details</button></td><td>نوره مناور مجبل الغيوطي الحربي</td><td>deploy on 7011</td><td>SUPPORT</td><td>Medium</td><td>05 Oct 2026</td><td><div class="reward-points"><button data-reward="6" data-points="1">1</button><button data-reward="6" data-points="2">2</button><button data-reward="6" data-points="3">3</button></div></td></tr>
         </tbody>
       </table>
     </div>
     <nav class="pagination" id="rewardPagination" aria-label="صفحات الإنجازات">
-      <span id="rewardRange">1–7 of 37</span>
       <div class="pages"><button class="btn" data-page="prev">Previous</button><button class="btn" data-page="1" aria-current="page">1</button><button class="btn" data-page="2">2</button><button class="btn" data-page="3">3</button><button class="btn" data-page="4">4</button><button class="btn" data-page="5">5</button><button class="btn" data-page="6">6</button><button class="btn" data-page="next">Next</button></div>
+      <span id="rewardRange">1–7 of 37</span>
     </nav>
   </div>
-  <p class="demo-note">بيانات تجريبية للتوضيح فقط / Sample data for demonstration only.</p>
   <p class="demo-result" id="rewardResult" role="status"></p>
 </section>
-<nav class="guide-links" aria-label="تتابع الأدلة"><a href="03-calendar.html" rel="prev">السابق: ▤ Calendar</a><a href="05-assign-task.html" rel="next">التالي: ＋ Assign Task</a></nav>
 <footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+<nav class="guide-links" aria-label="تتابع الأدلة"><a href="03-calendar.html" rel="prev">السابق: ▤ Calendar</a><a href="index.html">جميع الأدلة</a><a href="05-assign-task.html" rel="next">التالي: ＋ Assign Task</a><span>دليل توضيحي فقط / Demonstration only</span></nav>
 </main>
 </div>
 <div class="overlay" id="managerOverlay">
   <div class="modal manager-modal" id="managerModal" role="dialog" aria-modal="true" aria-labelledby="rewardModalTitle" tabindex="-1">
     <div class="mh"><b id="rewardModalTitle">Details</b><button class="btn" data-manager-close aria-label="إغلاق التفاصيل">✕</button></div>
     <div class="inner" id="rewardInfo" dir="ltr">
-      <div class="lbl">Emp Name</div><div class="fld" id="detailEmployee">Employee 01</div>
-      <div class="lbl">Task Date</div><div class="fld" id="detailDate">06/10/2026</div>
-      <div class="lbl">Tasktype</div><div class="fld" id="detailType">DOCUMENTATION</div>
-      <div class="lbl">Task Title</div><div class="fld" id="detailTitle">User Manual</div>
-      <div class="lbl">Task Description</div><div class="fld area" id="detailDescription">Prepare the manager and employee user manual.</div>
+      <div class="lbl">Emp Name</div><div class="fld" id="detailEmployee">دانه عبدالكريم يوسف خاجه</div>
+      <div class="lbl">Task Date</div><div class="fld" id="detailDate">07 Oct 2026</div>
+      <div class="lbl">Tasktype</div><div class="fld" id="detailType">TROUBLESHOOT</div>
+      <div class="lbl">Task Title</div><div class="fld" id="detailTitle">Restart SIS Report Server</div>
+      <div class="lbl">Task Description</div><div class="fld area" id="detailDescription">Restart SIS Report Server</div>
       <div class="lbl">Task Obstacle</div><div class="fld" id="detailObstacle">No obstacles / لا توجد عوائق</div>
       <div class="lbl">Collaborators</div><div class="fld" id="detailCollaborators">None / لا يوجد</div>
       <div class="review-actions" id="reviewActions"><button class="btn-yellow" id="returnTask">Return To Review</button><button class="btn btn-reject" id="rejectTask">Reject Task</button></div>
