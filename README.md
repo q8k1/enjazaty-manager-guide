@@ -12,8 +12,10 @@ The shared `multipage/styles.css` and `multipage/script.js` are copied verbatim 
 
 The manager stylesheet uses a left-to-right layout throughout the guide: navigation, main content, headers, forms, dialogs, landing page, and footer. Arabic tour explanations retain right-to-left text. Text is enlarged, and the bottom-left **?** button has a glowing heartbeat (disabled when reduced motion is preferred). Supervisee Tasks has a team-only empty state without an Add Enjaz action; personal achievement creation remains under My tasks.
 
+Supervisee Tasks includes seven task cards from Reward, with employee names, task types, priorities, dates, and Open details. Both screens use `multipage/tasks.js` as their shared task data. Team cards support search, date/status filters, and grid/list display; no-results never offers Add Enjaz.
+
 Reward (page 4) follows the supplied manager screenshot, including its navy app header, rounded title and tabs, table rows, three green reward shades, centered pagination, and right-aligned footer. Its screenshot-specific styling is scoped to `.reward-screen`; guide navigation and the interactive walkthrough remain available. Details uses the selected row's data; unseen task descriptions and attachments are not reproduced.
 
 All data and actions are demonstrations, not connected to the real system. Changes reset when you reload; no files or form data are sent anywhere.
 
-To preview locally, run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000/multipage/index.html`. Use **?** on each screen to open the bilingual tour; **Back/Next**, arrow keys, and **Escape** control it.
+To preview locally, run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000/multipage/index.html`. Each of the seven guide pages opens a welcome popup: **ابدأ** starts its bilingual tips immediately, while **Later** or **Escape** dismisses it. Use **?** to reopen the tour; **Back/Next**, arrow keys, and **Escape** control it.

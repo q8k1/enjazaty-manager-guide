@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="manager.css">
 <script src="script.js" defer></script>
+<script src="tasks.js" defer></script>
 <script src="manager.js" defer></script>
 </head>
 <body>
@@ -54,6 +55,7 @@
         <div class="card"><h4>Testing Loading <small>2 score</small></h4><div><span class="badge">Submitted</span></div><div style="font-size:11px">Testing page loading test 1</div><div><span class="pill">Category <b>Enjazaty</b></span><span class="pill">Priority <b>Low</b></span></div><div class="foot">09 Sep 2026 <button class="btn-yellow">Open</button></div></div>
         <div class="card" id="launchCard"><h4>launching enjazaty <small>3 score</small></h4><div><span class="badge">Submitted</span></div><div style="font-size:11px">launching enjazaty</div><div><span class="pill">Category <b>Enjazaty</b></span><span class="pill">Priority <b>High</b></span></div><div class="foot">19 Aug 2026 <button class="btn-yellow" id="launchOpen">Open</button></div></div>
       </div>
+      <div class="task-grid" id="teamCards" hidden></div>
       <div class="box empty-state" id="emptyTasks" hidden><b>Add your first achievement</b><p>أضف إنجازك الأول لعرضه هنا.</p><a class="btn-dark" href="02-add-task.html">+ Add Enjaz / إضافة إنجاز</a></div>
       <div class="box empty-state" id="emptyTeamTasks" hidden><b>No team tasks to display</b><p>لا توجد مهام لأعضاء الفريق لعرضها.</p></div>
     </section>
@@ -92,6 +94,22 @@
     <div style="border-top:1px solid #eee;padding:12px"><button class="btn" id="mClose2">Close</button></div>
   </div>
 </div>
+<div class="overlay" id="managerOverlay">
+  <div class="modal manager-modal" id="managerModal" role="dialog" aria-modal="true" aria-labelledby="teamDetailTitle" tabindex="-1">
+    <div class="mh"><b>Team Task / مهمة الفريق</b><button class="btn" data-manager-close aria-label="إغلاق تفاصيل المهمة">✕</button></div>
+    <div class="inner" id="teamDetail">
+      <div class="lbl">Task Title</div><div class="fld" id="teamDetailTitle"></div>
+      <div class="lbl">Employee</div><div class="fld" id="teamDetailEmployee" dir="auto"></div>
+      <div class="lbl">Task Date</div><div class="fld" id="teamDetailDate"></div>
+      <div class="lbl">Task Type</div><div class="fld" id="teamDetailType"></div>
+      <div class="lbl">Priority</div><div class="fld" id="teamDetailPriority"></div>
+      <div class="lbl">Status</div><div class="fld">Submitted</div>
+      <div class="lbl">Achievement Detail</div><div class="fld area" id="teamDetailDescription"></div>
+    </div>
+    <div class="inner"><b class="navy">File</b><p>No files attached / لا توجد ملفات مرفقة</p></div>
+    <div style="border-top:1px solid #eee;padding:12px"><button class="btn" data-manager-close>Close</button></div>
+  </div>
+</div>
 <div id="spot" hidden></div>
 <div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
   <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
@@ -111,7 +129,8 @@
 {"page":"view","el":"searchF","en":"Search by title, detail or category.","ar":"ابحث بالعنوان أو التفاصيل أو التصنيف."},
 {"page":"view","el":"statusF","en":"Filter tasks by status.","ar":"صفِّ المهام حسب الحالة."},
 {"page":"view","el":"viewT","en":"Switch between card view and list view.","ar":"بدّل بين عرض البطاقات وعرض القائمة."},
-{"page":"view","el":"emptyTeamTasks","en":"Supervisee Tasks shows team members' tasks. When none are available, this message appears without an Add Enjaz option. Add your own achievements from My tasks.","ar":"تعرض Supervisee Tasks مهام أعضاء الفريق. عند عدم وجود مهام تظهر هذه الرسالة دون خيار إضافة إنجاز. أضف إنجازاتك الشخصية من My tasks."},
+{"page":"view","el":"teamTaskCard","en":"These team cards contain the tasks shown on Reward (page 4), including the employee, type, priority and date. Use Open to view details. There is no Add Enjaz action in this tab.","ar":"تعرض بطاقات الفريق مهام Reward (الصفحة 4) مع الموظف والنوع والأولوية والتاريخ. اضغط Open للتفاصيل. لا يوجد خيار إضافة إنجاز في هذا التبويب."},
+{"page":"view","el":"teamDetail","en":"The team task popup shows the selected employee's task details. Close it to return to the team cards.","ar":"تعرض النافذة تفاصيل مهمة الموظف المحددة. أغلقها للعودة إلى بطاقات الفريق.","modal":"team"},
 {"page":"view","el":"launchCard","en":"Each card shows a task with its score. Click “Open” for details.","ar":"كل بطاقة تعرض مهمة ونقاطها. اضغط \"Open\" للتفاصيل."},
 {"page":"view","el":"mInner","en":"Here are the full task details. Continue to Settings to manage projects.","ar":"هذه تفاصيل المهمة كاملة. تابع إلى Settings لإدارة المشاريع.","modal":"launch"}
 ]

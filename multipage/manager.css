@@ -68,6 +68,15 @@ body{font-size:16px;direction:ltr;text-align:left}
 .manager-modal .form{padding:0}
 .manager-modal .form label{margin-top:12px}
 .manager-modal .form input,.manager-modal .form select{font-size:14px}
+.task-grid{display:flex;gap:10px;flex-wrap:wrap}
+.task-grid.list .card{width:100%}
+.team-employee{font-size:14px;color:#374151;unicode-bidi:plaintext}
+.tour-welcome{width:420px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto;padding:28px;border:0;border-radius:16px;background:#fff;color:#0b2a4a;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.tour-welcome::backdrop{background:rgba(0,0,0,.5)}
+.tour-welcome h2{margin:0 0 12px;font-size:22px}
+.tour-welcome p{line-height:1.8;margin:8px 0}
+.tour-welcome .welcome-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:20px}
+.tour-welcome .btn-dark{font-size:20px;padding:10px 32px}
 .reward-screen{background:#f4f7fa;color:#002855;font-size:13px}
 .reward-screen .guide-header{height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
 .reward-screen .reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}

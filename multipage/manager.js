@@ -2,6 +2,11 @@
 (() => {
   const byId = id => document.getElementById(id);
   const listen = (id, event, callback) => byId(id)?.addEventListener(event, callback);
+  const teamTasks = window.enjazatyTeamTasks || [];
+  const taskDate = date => {
+    const [year,month,day] = date.split("-");
+    return `${day} ${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][Number(month) - 1]} ${year}`;
+  };
   const tip = byId("tip");
   const overlay = byId("managerOverlay");
   const modal = byId("managerModal");
@@ -45,12 +50,10 @@
   const rewardRows = byId("rewardRows");
   const rewardTemplates = rewardRows ? [...rewardRows.children].map(row => row.cloneNode(true)) : [];
   const rewardTasks = rewardRows ? Array.from({length:38}, (_, index) => {
-    const cells = rewardTemplates[index % rewardTemplates.length].cells;
+    const task = teamTasks[index % teamTasks.length];
     return {
-      id:index, employee:cells[1].textContent,
-      title:cells[2].textContent, type:cells[3].textContent,
-      priority:cells[4].textContent, date:cells[5].textContent,
-      description:cells[2].textContent,
+      ...task, id:index, date:taskDate(task.date),
+      description:task.title,
       status:index === 37 ? "Assigned" : "Submitted", points:0
     };
   }) : [];
@@ -218,6 +221,40 @@
 
   const cards = byId("cards");
   const taskCards = cards ? [...cards.children] : [];
+  const teamCards = byId("teamCards");
+  function textElement(tag, text, className) {
+    const element = document.createElement(tag);
+    element.textContent = text;
+    if (className) element.className = className;
+    return element;
+  }
+  function showTeamTask(task, focus = true) {
+    if (!task) return;
+    byId("teamDetailTitle").textContent = task.title;
+    byId("teamDetailEmployee").textContent = task.employee;
+    byId("teamDetailDate").textContent = taskDate(task.date);
+    byId("teamDetailType").textContent = task.type;
+    byId("teamDetailPriority").textContent = task.priority;
+    byId("teamDetailDescription").textContent = task.title;
+    openModal(focus);
+  }
+  if (teamCards) teamTasks.forEach((task,index) => {
+    const card = document.createElement("article");
+    card.className = "card";
+    if (index === 0) card.id = "teamTaskCard";
+    card.append(textElement("h4",task.title));
+    card.append(textElement("span","Submitted","badge"));
+    card.append(textElement("div",task.employee,"team-employee"));
+    card.append(textElement("div",`Task Type: ${task.type}`,"pill"));
+    card.append(textElement("div",`Priority: ${task.priority}`,"pill"));
+    const foot = textElement("div",taskDate(task.date),"foot");
+    const button = textElement("button","Open","btn-yellow");
+    button.type = "button";
+    button.setAttribute("aria-label",`Open: ${task.title}, ${task.employee}`);
+    button.addEventListener("click", () => showTeamTask(task));
+    foot.append(button); card.append(foot); teamCards.append(card);
+  });
+  const teamTaskCards = teamCards ? [...teamCards.children] : [];
   let teamView = false, timeFilter = 0, statusFilter = 0;
   function renderView() {
     if (!cards) return;
@@ -226,15 +263,22 @@
     const start = dates[0].value, end = dates[1].value;
     const taskDates = ["2026-10-06","2026-09-29","2026-09-09","2026-08-19"];
     const taskStatuses = [1,2,1,1];
+    function matches(date,status,text,today) {
+      const timeMatches = timeFilter === 0 || (timeFilter === 1 ? date === today : timeFilter === 2 ? date >= "2026-10-04" && date <= today : date.startsWith("2026-10"));
+      return timeMatches && (statusFilter === 0 || status === statusFilter) && (!start || date >= start) && (!end || date <= end) && text.toLowerCase().includes(search);
+    }
+    cards.hidden = teamView;
+    teamCards.hidden = !teamView;
     taskCards.forEach((card,index) => {
-      const date = taskDates[index];
-      const timeMatches = timeFilter === 0 || (timeFilter === 1 ? date === "2026-10-06" : timeFilter === 2 ? date >= "2026-10-04" && date <= "2026-10-06" : date.startsWith("2026-10"));
-      card.hidden = teamView || !timeMatches || (statusFilter !== 0 && taskStatuses[index] !== statusFilter) || (start && date < start) || (end && date > end) || !card.textContent.toLowerCase().includes(search);
+      card.hidden = teamView || !matches(taskDates[index],taskStatuses[index],card.textContent,"2026-10-06");
+    });
+    teamTaskCards.forEach((card,index) => {
+      card.hidden = !teamView || !matches(teamTasks[index].date,1,card.textContent,"2026-10-07");
     });
     byId("emptyTasks").hidden = teamView || taskCards.some(card => !card.hidden);
-    byId("emptyTeamTasks").hidden = !teamView;
-    byId("stats").querySelectorAll("b").forEach((counter,index) => { counter.textContent = teamView ? "0" : [4,1,0,3,0][index]; });
-    byId("statusF").querySelectorAll("button").forEach((button,index) => { button.textContent = `${["All","Submitted","Assigned","Needs review","Canceled"][index]} ${teamView ? 0 : [4,3,1,0,0][index]}`; });
+    byId("emptyTeamTasks").hidden = !teamView || teamTaskCards.some(card => !card.hidden);
+    byId("stats").querySelectorAll("b").forEach((counter,index) => { counter.textContent = (teamView ? [teamTasks.length,0,0,teamTasks.length,0] : [4,1,0,3,0])[index]; });
+    byId("statusF").querySelectorAll("button").forEach((button,index) => { button.textContent = `${["All","Submitted","Assigned","Needs review","Canceled"][index]} ${(teamView ? [teamTasks.length,teamTasks.length,0,0,0] : [4,3,1,0,0])[index]}`; });
   }
   function selectButton(group,selected) {
     group.querySelectorAll("button").forEach(button => {
@@ -274,6 +318,7 @@
     button.setAttribute("aria-pressed", String(index === 0));
     button.addEventListener("click", () => {
       cards.classList.toggle("list", index === 1);
+      teamCards.classList.toggle("list", index === 1);
       byId("viewT").querySelectorAll("button").forEach(item => {
         item.setAttribute("aria-pressed", String(item === button));
         item.style.background = item === button ? "#0b2a4a" : "#fff";
@@ -309,14 +354,60 @@
     wasTourOpen = true;
     const index = Number(byId("tipCount").textContent.split("/")[0]) - 1;
     const step = steps[index];
-    if (cards && step?.el !== "emptyTeamTasks" && teamView) byId("myTasks").click();
+    if (cards) {
+      const teamStep = step?.el === "teamTaskCard" || step?.el === "teamDetail";
+      if (teamView !== teamStep) byId(teamStep ? "teamTasks" : "myTasks").click();
+    }
     if (step?.modal === "reward") showTask(rewardTasks[0],false);
     else if (step?.modal === "project") showProject(projects[0],false);
+    else if (step?.modal === "team") showTeamTask(teamTasks[0],false);
     else closeModal(false);
-    if (step?.el === "emptyTeamTasks") byId("teamTasks").click();
     if (step) byId(step.el)?.scrollIntoView({block:"center",behavior:"instant"});
   }
   const observer = new MutationObserver(syncTour);
   observer.observe(tip, {attributes:true,attributeFilter:["hidden"]});
   observer.observe(byId("tipCount"), {childList:true});
+
+  const welcome = document.createElement("dialog");
+  welcome.className = "tour-welcome";
+  welcome.id = "tourWelcome";
+  welcome.setAttribute("aria-labelledby","welcomeTitle");
+  welcome.setAttribute("aria-describedby","welcomeDescription");
+  const title = textElement("h2","مرحباً بك في دليل المدير");
+  title.id = "welcomeTitle";
+  title.dir = "rtl";
+  const description = textElement("p","اضغط ابدأ لبدء الشرح التفاعلي لهذه الصفحة.");
+  description.id = "welcomeDescription";
+  description.dir = "rtl";
+  const english = textElement("p","Start the interactive guide for this page.");
+  english.lang = "en";
+  const actions = document.createElement("div");
+  actions.className = "welcome-actions";
+  const start = textElement("button","ابدأ","btn-dark");
+  start.id = "startTour";
+  start.type = "button";
+  const skip = textElement("button","لاحقاً / Later","btn");
+  skip.type = "button";
+  start.addEventListener("click", () => {
+    welcome.close();
+    byId("help").click();
+    document.fonts.ready.then(() => dispatchEvent(new Event("resize")));
+  });
+  skip.addEventListener("click", () => welcome.close());
+  welcome.addEventListener("keydown", event => {
+    if (event.key !== "Tab") return;
+    if (event.shiftKey && document.activeElement === start) {
+      event.preventDefault(); skip.focus();
+    } else if (!event.shiftKey && document.activeElement === skip) {
+      event.preventDefault(); start.focus();
+    }
+  });
+  welcome.addEventListener("close", () => {
+    if (tip.hidden) byId("help").focus({preventScroll:true});
+  });
+  actions.append(start,skip);
+  welcome.append(title,description,english,actions);
+  document.body.append(welcome);
+  welcome.showModal();
+  start.focus({preventScroll:true});
 })();
