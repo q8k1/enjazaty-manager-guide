@@ -6,7 +6,7 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
 .side a.active{background:#090909}
 .guide-header{min-height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
 .reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
-.university-logo{width:32px;height:32px;object-fit:contain;flex-shrink:0;font-size:8px;color:#fff}
+.university-logo{width:56px;height:56px;object-fit:contain;flex-shrink:0;font-size:8px;color:#fff}
 .guide-header h1{color:#fff;font-size:18px}
 .reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
 .app{min-height:calc(100vh - 49px)}
@@ -150,7 +150,7 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
  .side a{font-size:14px}
  .guide-header{padding:8px 12px}
  .guide-header h1{font-size:16px}
- .university-logo{width:28px;height:28px}
+ .university-logo{width:44px;height:44px}
  .card{width:100%}
  .cal th,.cal td,.ev{font-size:12px}
  .manager-table{min-width:720px}
