@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>1. ⌂ Home | دليل المسؤول — نظام إنجازاتي</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="manager.css">
+<script src="script.js" defer></script>
+<script src="manager.js" defer></script>
+</head>
+<body>
+<header class="guide-header">
+  <a class="reward-brand" href="index.html" aria-label="دليل المسؤول — جميع الأدلة"><img class="university-logo" src="https://github.com/user-attachments/assets/ec82bbd5-752e-45f9-b684-daaa5623a517" alt="جامعة الكويت / Kuwait University" width="32" height="32" referrerpolicy="no-referrer"><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
+  <span class="reward-account"><span aria-hidden="true">♙</span> USER <span aria-hidden="true">⌄</span></span>
+</header>
+<div class="app">
+<nav class="side" aria-label="الأدلة">
+  <a href="01-home.html" id="nav-home" class="active" aria-current="page">1. ⌂ Home</a>
+  <a href="02-add-task.html" id="nav-add">2. 🎖 Add Task</a>
+  <a href="03-calendar.html" id="nav-cal">3. ▤ Calendar</a>
+  <a href="04-reward.html" id="nav-reward">4. ★ Reward</a>
+  <a href="05-assign-task.html" id="nav-assign">5. ＋ Assign Task</a>
+  <a href="06-view-enjazaty.html" id="nav-view">6. ☰ View Enjazaty</a>
+  <a href="07-settings.html" id="nav-settings">7. ⚙ Settings</a>
+</nav>
+<main class="main">
+    <section class="page" id="home">
+      <div class="box" style="text-align:center;padding:10px">
+        <div class="navy" style="font-size:18px;font-weight:700">📊 نظام إنجازاتي</div>
+        <div style="font-size:11px">Enjazaty</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0 8px">
+        <b class="navy">Today's Tasks / مهام اليوم</b>
+        <button class="btn-dark" id="addBtn">+ Add Enjaz / إضافة إنجاز</button>
+      </div>
+      <div class="card" id="todayCard">
+        <h4>تحديث بسيط <small>1 score</small></h4>
+        <div><span class="badge">Submitted</span></div>
+        <div style="font-size:11px">تنفيذ تحديث عام.</div>
+        <div><span class="pill">Project <b>Project A</b></span><span class="pill">Priority <b>Low</b></span></div>
+        <div class="foot">06 Oct 2026 <button class="btn-yellow" id="todayOpen">Open</button></div>
+      </div>
+      <div class="box" id="totalScore" style="width:155px;margin:16px 0 8px;padding:10px;display:flex;justify-content:space-between"><b>Total Score</b><span class="pill"><b>1</b></span></div>
+
+      <div class="box" id="statusBox" style="margin-bottom:8px">
+        <div class="section-h">ملخص حالات الإنجازات | Status Summary</div>
+        <div style="padding:10px">
+          <div style="display:flex;gap:8px" id="pieDates">
+            <div class="date-in"><span>Start Date Pie</span>09-06-2026</div>
+            <div class="date-in"><span>End Date Pie</span>10-06-2026</div>
+          </div>
+          <div style="position:relative;height:190px;display:flex;align-items:center;justify-content:center">
+            <div id="pie" style="width:145px;height:145px;border-radius:50%;background:#4ade80;display:flex;align-items:center;justify-content:center;font-size:9px">Submitted</div>
+            <div style="position:absolute;right:6px;font-size:9px"><span style="color:#4ade80">■</span> Submitted</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box" id="barBox">
+        <div class="section-h">إجمالي النقاط | Rewarded Achievements</div>
+        <div style="padding:10px">
+          <div style="display:flex;gap:8px">
+            <div class="date-in"><span>Start Date</span>09-06-2026</div>
+            <div class="date-in"><span>End Date</span>10-06-2026</div>
+          </div>
+          <div id="bars" style="display:flex;align-items:flex-end;height:180px;border-bottom:1px solid #999;margin-top:12px;gap:2%"></div>
+          <div id="barNames" style="display:flex;gap:2%;font-size:7px;color:#6b7280;text-align:center;margin-top:4px"></div>
+        </div>
+      </div>
+    </section>
+<nav class="guide-links" aria-label="تتابع الأدلة"><a href="02-add-task.html" rel="next">التالي: 🎖 Add Task</a></nav>
+<footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+</main>
+</div>
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="mh"><b>Task</b><button class="btn" id="mClose" style="padding:0 6px">✕</button></div>
+    <div class="inner" id="mInner">
+      <div style="display:flex;justify-content:space-between">
+        <div><div class="lbl" style="margin-top:0">Enjaz Details</div>
+          <div class="navy" id="mTitle" style="font-size:15px;font-weight:700"></div>
+          <div style="font-size:11px">Date <b id="mDate"></b></div>
+          <div style="font-size:11px">Created by <b>نادر الوادي</b></div></div>
+        <div><span class="badge" id="mStatus">Submitted</span></div>
+      </div>
+      <hr style="border:0;border-top:1px solid #eee">
+      <div id="mDept"><div class="lbl">Department</div><div class="fld">Department A</div></div>
+      <div style="display:flex;gap:10px" id="mProj">
+        <div style="flex:1"><div class="lbl">Project</div><div class="fld">Project A</div></div>
+        <div style="flex:1"><div class="lbl">Priority</div><div class="fld" id="mPri"></div></div>
+      </div>
+      <div><div class="lbl">Collaborators</div><div class="fld"></div></div>
+      <div id="mDetail"><div class="lbl">Achievement Detail</div><div class="fld area" id="mDesc"></div></div>
+      <div><div class="lbl">Obstacles</div><div class="fld area"></div></div>
+    </div>
+    <div class="inner" id="mFile" style="border-left:1px solid #e5e7eb;padding:0">
+      <div style="padding:10px;background:#f8fafc;border-bottom:1px solid #eee"><b class="navy">File</b></div>
+      <div style="text-align:center;padding:16px;font-size:11px"><b>No files attached</b><br>This task has no supporting documents.</div>
+    </div>
+    <div style="border-top:1px solid #eee;padding:12px"><button class="btn" id="mClose2">Close</button></div>
+  </div>
+</div>
+<div id="spot" hidden></div>
+<div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
+  <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
+  <div class="en" id="tipEn" lang="en"></div>
+  <div class="ar" id="tipAr"></div>
+  <div class="nav"><button class="back" id="tipBack">Back</button><span class="count" id="tipCount"></span><button class="next" id="tipNext">Next</button></div>
+</div>
+<button id="help" title="Show guide" aria-label="فتح الشرح التفاعلي">?</button>
+<script type="application/json" id="guide-steps">
+[
+{"page":"home","el":"nav-home","en":"Welcome to Enjazaty! This is the Home page. Use the sidebar to move between pages.","ar":"مرحباً بك في نظام إنجازاتي! هذه الصفحة الرئيسية. استخدم القائمة الجانبية للتنقل بين الصفحات."},
+{"page":"home","el":"addBtn","en":"Click “+ Add Enjaz” to quickly record a new achievement.","ar":"اضغط على \"إضافة إنجاز\" لتسجيل إنجاز جديد بسرعة."},
+{"page":"home","el":"todayCard","en":"Today's Tasks shows the achievements you logged today, with status, project and priority.","ar":"تعرض مهام اليوم الإنجازات المسجلة اليوم مع الحالة والمشروع والأولوية."},
+{"page":"home","el":"todayOpen","en":"Click “Open” to view the full details of a task.","ar":"اضغط على \"Open\" لعرض تفاصيل المهمة كاملة."},
+{"page":"home","el":"mInner","en":"The task popup shows all details: title, date, creator, department, project, priority and description.","ar":"تعرض النافذة جميع التفاصيل: العنوان، التاريخ، المنشئ، القسم، المشروع، الأولوية والوصف.","modal":"today"},
+{"page":"home","el":"mFile","en":"Any attached supporting files appear here.","ar":"تظهر هنا الملفات المرفقة الداعمة للمهمة.","modal":"today"},
+{"page":"home","el":"mClose2","en":"Click “Close” to return to the page.","ar":"اضغط \"Close\" للعودة إلى الصفحة.","modal":"today"},
+{"page":"home","el":"totalScore","en":"Total Score shows the points you earned from your achievements.","ar":"يعرض مجموع النقاط التي حصلت عليها من إنجازاتك."},
+{"page":"home","el":"statusBox","en":"Status Summary shows your achievements by status. Change the start and end dates to filter the chart.","ar":"يعرض ملخص الحالات إنجازاتك حسب الحالة. غيّر تاريخ البداية والنهاية لتصفية الرسم."},
+{"page":"home","el":"barBox","en":"Rewarded Achievements compares employees' total points within the selected dates.","ar":"يقارن إجمالي النقاط نقاط الموظفين خلال الفترة المحددة."}
+]
+</script>
+</body>
+</html>

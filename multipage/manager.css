@@ -1,0 +1,159 @@
+.app{direction:ltr}
+.main{direction:ltr}
+.side{direction:ltr;width:243px;padding-top:0}
+body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#002855}
+.side a{font-size:14px;padding:10px 15px;min-height:40px}
+.side a.active{background:#090909}
+.guide-header{min-height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
+.reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
+.university-logo{width:56px;height:56px;object-fit:contain;flex-shrink:0;font-size:8px;color:#fff}
+.guide-header h1{color:#fff;font-size:18px}
+.reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
+.app{min-height:calc(100vh - 49px)}
+.box,.stat{border-color:#dbe4ef;border-radius:16px;box-shadow:0 4px 12px rgba(0,40,85,.06)}
+.hub-card{border-top-color:#002855}
+.btn-dark,.rpill.on,.chips button.on{background:#002855}
+.manager-heading{background:#fff;border-radius:16px;padding:18px 12px;box-shadow:0 4px 12px rgba(0,40,85,.06)}
+.guide-links{padding-bottom:90px}
+.footer{font-size:14px;direction:ltr;text-align:left}
+.btn,.btn-dark,.btn-yellow,.rpill,.chips button{font-size:14px}
+.form label,.form input,.form select,.form textarea{font-size:15px}
+.section-h,.stat span,.card .foot,.pill,.badge,.card h4 small{font-size:14px}
+.card h4{font-size:16px}
+.card{width:280px}
+.date-in{font-size:14px;padding:6px 8px}
+.date-in span{font-size:12px}
+.cal th,.cal td,.ev{font-size:14px}
+.modal .lbl{font-size:12px}
+.modal .fld{font-size:14px}
+.page [style*="font-size:11px"],.page [style*="font-size:10px"]{font-size:14px!important}
+.page [style*="font-size:18px"]{font-size:22px!important}
+#barNames{font-size:10px!important}
+#tip{font-size:16px;width:340px}
+#tip .nav button{font-size:14px}
+#tip .next{background:#002855}
+#tip .count{font-size:13px}
+#help{left:16px;right:auto;width:60px;height:60px;font-size:28px;font-weight:700;animation:guide-heartbeat 2.4s ease-in-out infinite;box-shadow:0 0 18px rgba(79,70,229,.55)}
+#help:hover,#help:focus-visible{animation-play-state:paused}
+@keyframes guide-heartbeat{
+ 0%,45%,100%{transform:scale(1);box-shadow:0 0 18px rgba(79,70,229,.55)}
+ 12%,30%{transform:scale(1.12);box-shadow:0 0 28px rgba(79,70,229,.8)}
+ 21%{transform:scale(1.03)}
+}
+@media(prefers-reduced-motion:reduce){
+ #help{animation:none}
+}
+.manager-heading{text-align:center;margin-bottom:14px}
+.manager-heading h2{font-size:22px;margin:4px 0;color:#0b2a4a}
+.manager-heading p{margin:4px 0;color:#0b2a4a}
+.manager-tabs{display:flex;flex-wrap:wrap;gap:4px;border:1px solid #dbe4ef;border-radius:16px;padding:5px;background:#fff;margin:16px 0 10px}
+.manager-tabs button{background:none;border:0;padding:8px 12px;font-size:15px;color:#0b2a4a;cursor:pointer;border-bottom:2px solid transparent}
+.manager-tabs button.active{border-bottom-color:transparent;border-radius:11px;background:#002855;color:#fff;font-weight:600}
+.table-scroll{overflow-x:auto}
+.manager-table{width:100%;border-collapse:collapse;direction:ltr;text-align:left;font-size:14px}
+.manager-table th{background:#f8fafc;color:#0b2a4a;font-weight:600}
+.manager-table th,.manager-table td{padding:10px 8px;border-bottom:1px solid #e5e7eb}
+.manager-table td{overflow-wrap:anywhere}
+.reward-points{display:flex;gap:4px}
+.reward-points button{background:#15803d;color:#fff;border:0;border-radius:4px;padding:5px 9px;cursor:pointer;font-size:14px}
+.reward-points button[aria-pressed="true"]{outline:2px solid #0b2a4a;outline-offset:2px}
+.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:4px;justify-content:space-between;padding:12px;direction:ltr}
+.pagination .pages{display:flex;flex-wrap:wrap;gap:4px}
+.pagination [aria-current="page"]{background:#0b2a4a;color:#fff}
+.manager-form{border:1px solid #eee;border-left:3px solid #fbbf24;border-radius:6px;padding:4px 20px 16px}
+.manager-form textarea{width:100%}
+.manager-form fieldset{border:0;margin:14px 0 4px;padding:0}
+.manager-form legend{font-size:15px;color:#374151;margin-bottom:6px}
+.manager-form .radio-options{display:flex;flex-wrap:wrap;gap:12px;direction:ltr}
+.manager-form .radio-options label{display:flex;align-items:center;gap:4px;margin:0}
+.manager-form input[type="radio"]{width:auto}
+.manager-submit{width:100%;margin-top:10px;padding:9px}
+.project-fields{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.project-fields>div{flex:1 1 200px}
+.project-fields label{margin-top:4px}
+.btn-reject{color:#b91c1c;border-color:#b91c1c}
+.review-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.demo-note{font-size:14px;color:#6b7280;margin:10px 0}
+.demo-result{color:#0b2a4a;font-size:15px}
+.empty-state{text-align:center;padding:30px;margin:12px 0}
+.manager-modal .form{padding:0}
+.manager-modal .form label{margin-top:12px}
+.manager-modal .form input,.manager-modal .form select{font-size:14px}
+.task-grid{display:flex;gap:10px;flex-wrap:wrap}
+.task-grid.list .card{width:100%}
+.team-employee{font-size:14px;color:#374151;unicode-bidi:plaintext}
+.tour-welcome{width:420px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto;padding:28px;border:0;border-radius:16px;background:#fff;color:#0b2a4a;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.tour-welcome::backdrop{background:rgba(0,0,0,.5)}
+.tour-welcome h2{margin:0 0 12px;font-size:22px}
+.tour-welcome p{line-height:1.8;margin:8px 0}
+.tour-welcome .welcome-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:20px}
+.tour-welcome .btn-dark{font-size:20px;padding:10px 32px}
+.reward-screen{background:#f4f7fa;color:#002855;font-size:13px}
+.reward-screen .guide-header{height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
+.reward-screen .reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
+.reward-screen .guide-header h1{color:#fff;font-size:18px}
+.reward-screen .reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
+.reward-screen .app{min-height:calc(100vh - 49px)}
+.reward-screen .side{width:243px;padding-top:0}
+.reward-screen .side a{height:40px;font-size:14px;padding:10px 15px}
+.reward-screen .side a.active{background:#090909}
+.reward-screen #reward{padding:16px;flex:none}
+.reward-screen .manager-heading{background:#fff;border-radius:16px;min-height:107px;padding:18px 12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,40,85,.06)}
+.reward-screen .manager-heading h2{font-size:28px;direction:rtl;margin:0 0 6px}
+.reward-screen .manager-heading p{font-size:18px;margin:0}
+.reward-screen #rewardTabs{margin:0 0 18px;padding:5px;gap:0;background:#fff;border:1px solid #dbe4ef;border-radius:16px;box-shadow:0 3px 8px rgba(0,40,85,.05)}
+.reward-screen #rewardTabs button{flex:1;min-width:0;min-height:64px;border:0;border-radius:11px;color:#6b7b91;font-size:14px;padding:10px}
+.reward-screen #rewardTabs button span{display:block;font-size:12px;margin-top:4px}
+.reward-screen #rewardTabs button.active{background:#002855;color:#fff}
+.reward-screen .reward-panel{border:1px solid #dbe4ef;border-radius:16px;overflow:hidden}
+.reward-screen .manager-table{min-width:1100px;font-size:13px;table-layout:fixed;color:#002855}
+.reward-screen .manager-table th{height:45px;background:#f4f7fa;color:#002855}
+.reward-screen .manager-table th,.reward-screen .manager-table td{padding:12px;border-bottom:1px solid #e8eef5}
+.reward-screen .manager-table td{height:65px}
+.reward-screen .manager-table th:nth-child(1){width:6%}
+.reward-screen .manager-table th:nth-child(2){width:18.5%}
+.reward-screen .manager-table th:nth-child(3){width:19.5%}
+.reward-screen .manager-table th:nth-child(4){width:11%}
+.reward-screen .manager-table th:nth-child(5){width:6.5%}
+.reward-screen .manager-table th:nth-child(6){width:13.5%}
+.reward-screen .manager-table th:nth-child(7){width:25%;text-align:center}
+.reward-screen .manager-table td:nth-child(2){unicode-bidi:plaintext}
+.reward-screen .manager-table td:nth-child(3){font-weight:700}
+.reward-screen [data-detail]{padding:0;border:0;background:none;color:#002855;font-size:13px;font-weight:700}
+.reward-screen .reward-points{align-items:center;justify-content:center;gap:8px}
+.reward-screen .reward-points::before{content:"Reward:";font-size:12px;font-weight:600;margin-right:4px}
+.reward-screen .reward-points button{width:75px;height:38px;padding:0;border-radius:8px;background:#e7f5e9;color:#16812b;font-size:14px;font-weight:700}
+.reward-screen .reward-points button[data-points="2"]{background:#c6e7c7}
+.reward-screen .reward-points button[data-points="3"]{background:#80c883}
+.reward-screen .reward-points button:disabled{opacity:.45;cursor:default}
+.reward-screen #rewardPagination{justify-content:center;gap:14px;min-height:68px;padding:16px}
+.reward-screen #rewardPagination .pages{gap:6px}
+.reward-screen #rewardPagination button{height:36px;min-width:36px;padding:7px 10px;font-size:13px;border:1px solid #dbe4ef;border-radius:6px;color:#002855}
+.reward-screen #rewardPagination [aria-current="page"]{background:#002855;border-color:#002855;color:#fff}
+.reward-screen #rewardPagination button:disabled{color:#899bb2;cursor:default}
+.reward-screen #rewardRange{font-size:12px;color:#768ca9}
+.reward-screen #rewardResult:empty{display:none}
+.reward-screen .footer{margin-top:16px;padding:28px 68px 12px 16px;text-align:right;font-size:12px;background:#f1f1f1;border-top:1px solid #e3e3e3}
+.reward-screen .guide-links{padding:12px 16px 24px;font-size:12px;background:#f1f1f1}
+@media(max-width:700px){
+ .reward-screen .side{width:100%}
+ .reward-screen .guide-header{padding:8px 12px}
+ .reward-screen .guide-header h1{font-size:16px}
+ .reward-screen #reward{padding:12px}
+ .reward-screen .manager-heading h2{font-size:22px}
+ .reward-screen .manager-heading p{font-size:15px}
+ .reward-screen #rewardTabs button{flex:1 1 50%}
+ .reward-screen #rewardPagination{gap:10px;padding:12px}
+ .reward-screen #rewardPagination .pages{gap:4px}
+ .reward-screen #rewardPagination button{min-width:30px;padding:7px}
+ .side{width:100%}
+ .side a{font-size:14px}
+ .guide-header{padding:8px 12px}
+ .guide-header h1{font-size:16px}
+ .university-logo{width:44px;height:44px}
+ .card{width:100%}
+ .cal th,.cal td,.ev{font-size:12px}
+ .manager-table{min-width:720px}
+ .manager-heading h2{font-size:20px}
+ .manager-form{padding:4px 12px 16px}
+}
