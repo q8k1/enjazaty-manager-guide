@@ -4,7 +4,7 @@
   const listen = (id, event, callback) => byId(id)?.addEventListener(event, callback);
   const data = byId("guide-steps");
   const steps = data ? JSON.parse(data.textContent) : [];
-  const people = [["JUMANA A Y KHAJAH",31],["HEND I T ALDUAIJ",26],["ASHWAQ SALAH DERIE",17],["YOUSEF M D ALENEZI",8],["MANAL ELCHEIKH",4],["KHALED S M ALMARRI",3],["ZAINAB ALI ALAMER",2],["ANAS LUTFI JAMIL NAYEEH",0],["ALAA A A ALSEBAEI",0],["ZAINAB Y R ALI",0],["MARIAM M F M D ALRASHED",0]];
+  const people = [["سارة الورد",31],["عمر السحاب",26],["ليان النور",17],["يوسف الروضة",8],["هند الربيع",4],["فارس القمر",3],["مها النسيم",2],["راشد الأفق",0],["ريم الزهر",0],["نادر الوادي",0],["أمل الغد",0]];
   if (byId("bars")) {
     byId("bars").innerHTML = people.map(p => `<div style="flex:1;height:${p[1]/35*100}%;background:#349fdc" title="${p[0]}: ${p[1]}"></div>`).join("");
     byId("barNames").innerHTML = people.map(p => `<div style="flex:1">${p[0]}</div>`).join("");
@@ -21,10 +21,10 @@
     });
   });
   const tasks = {
-    today: {t:"اضافة نوع انجاز",d:"06-OCT-2026",p:"Low",desc:"اضافة نوع (مهام ادارية) لانواع الانجاز"},
-    launch: {t:"launching enjazaty",d:"19-AUG-2026",p:"High",desc:"launching enjazaty"},
-    manual: {t:"User Manual",d:"29-SEP-2026",p:"Medium",desc:"Kindly start preparing the user manual for supervisor and employee Make sure to add the read write staus for the tasks",status:"Request"},
-    testing: {t:"Testing Loading",d:"09-SEP-2026",p:"Low",desc:"Testing page loading test 1"}
+    today: {t:"تحديث بسيط",d:"06-OCT-2026",p:"Low",desc:"تنفيذ تحديث عام."},
+    launch: {t:"Project update",d:"19-AUG-2026",p:"High",desc:"Completed a general update."},
+    manual: {t:"Prepare a document",d:"29-SEP-2026",p:"Medium",desc:"Prepare a short document.",status:"Request"},
+    testing: {t:"Routine check",d:"09-SEP-2026",p:"Low",desc:"Completed a routine check."}
   };
   const overlay = byId("overlay");
   let modalTrigger = null;

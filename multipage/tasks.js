@@ -1,10 +1,10 @@
 "use strict";
 window.enjazatyTeamTasks = [
-  {employee:"دانه عبدالكريم يوسف خاجه",title:"Restart SIS Report Server",type:"TROUBLESHOOT",priority:"High",date:"2026-10-07"},
-  {employee:"دانه عبدالكريم يوسف خاجه",title:"Non-KU Account",type:"OTHER",priority:"Medium",date:"2026-10-07"},
-  {employee:"دانه عبدالكريم يوسف خاجه",title:"Start weblogic admin consoles",type:"TROUBLESHOOT",priority:"Medium",date:"2026-10-07"},
-  {employee:"نوره مناور مجبل الغيوطي الحربي",title:"Closed BMC helix requests",type:"SUPPORT",priority:"Medium",date:"2026-10-06"},
-  {employee:"نوره مناور مجبل الغيوطي الحربي",title:"repprod1 down",type:"SUPPORT",priority:"High",date:"2026-10-06"},
-  {employee:"نوره مناور مجبل الغيوطي الحربي",title:"compile & upload",type:"SUPPORT",priority:"High",date:"2026-10-06"},
-  {employee:"نوره مناور مجبل الغيوطي الحربي",title:"deploy on 7011",type:"SUPPORT",priority:"Medium",date:"2026-10-05"}
+  {employee:"سارة الورد",title:"Routine maintenance",type:"TROUBLESHOOT",priority:"High",date:"2026-10-07"},
+  {employee:"عمر السحاب",title:"General request",type:"OTHER",priority:"Medium",date:"2026-10-07"},
+  {employee:"ليان النور",title:"Service check",type:"TROUBLESHOOT",priority:"Medium",date:"2026-10-07"},
+  {employee:"يوسف الروضة",title:"Follow-up",type:"SUPPORT",priority:"Medium",date:"2026-10-06"},
+  {employee:"هند الربيع",title:"Issue review",type:"SUPPORT",priority:"High",date:"2026-10-06"},
+  {employee:"فارس القمر",title:"Routine update",type:"SUPPORT",priority:"High",date:"2026-10-06"},
+  {employee:"مها النسيم",title:"General support",type:"SUPPORT",priority:"Medium",date:"2026-10-05"}
 ];

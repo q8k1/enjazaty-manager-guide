@@ -13,7 +13,7 @@
 <body>
 <header class="guide-header">
   <a class="reward-brand" href="index.html" aria-label="دليل المدير — جميع الأدلة"><span aria-hidden="true">🏅</span><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
-  <span class="reward-account"><span aria-hidden="true">♙</span> 22401076 <span aria-hidden="true">⌄</span></span>
+  <span class="reward-account"><span aria-hidden="true">♙</span> نادر الوادي <span aria-hidden="true">⌄</span></span>
 </header>
 <div class="app">
 <nav class="side" aria-label="الأدلة">
@@ -31,7 +31,7 @@
   <form class="box form" id="projectForm" style="padding:14px">
     <div class="project-fields">
       <div id="projectNameField"><label class="req" for="projectName">Project Name</label><input id="projectName" required></div>
-      <div id="projectDeptField"><label class="req" for="projectDept">Department</label><select id="projectDept" required><option value="">Select department</option><option>DEPT. of Databases</option><option>DEPT. of Systems Development</option></select></div>
+      <div id="projectDeptField"><label class="req" for="projectDept">Department</label><select id="projectDept" required><option value="">Select department</option><option>Department A</option><option>Department B</option></select></div>
       <button class="btn-dark" id="projectSave" type="submit">Save</button>
     </div>
   </form>
@@ -40,11 +40,11 @@
       <table class="manager-table" aria-label="المشاريع">
         <thead><tr><th scope="col">Action</th><th scope="col">Project Name</th><th scope="col">Created By</th><th scope="col">Created On</th><th scope="col">Updated By</th><th scope="col">Updated On</th><th scope="col">Department</th></tr></thead>
         <tbody id="projectRows">
-          <tr><td><button class="btn-yellow" id="projectDetails" data-project="0">Details</button></td><td>Meeting</td><td>22401076</td><td>30/09/2026</td><td>22401076</td><td>30/09/2026</td><td>DEPT. of Databases</td></tr>
-          <tr><td><button class="btn-yellow" data-project="1">Details</button></td><td>Technical Infrastructure</td><td>22401076</td><td>30/09/2026</td><td>22401076</td><td>30/09/2026</td><td>DEPT. of Databases</td></tr>
-          <tr><td><button class="btn-yellow" data-project="2">Details</button></td><td>Deployment</td><td>22401076</td><td>30/09/2026</td><td>22401076</td><td>30/09/2026</td><td>DEPT. of Databases</td></tr>
-          <tr><td><button class="btn-yellow" data-project="3">Details</button></td><td>Microsoft Management</td><td>22401076</td><td>30/09/2026</td><td>22401076</td><td>30/09/2026</td><td>DEPT. of Databases</td></tr>
-          <tr><td><button class="btn-yellow" data-project="4">Details</button></td><td>Account Management</td><td>22401076</td><td>30/09/2026</td><td>22401076</td><td>30/09/2026</td><td>DEPT. of Databases</td></tr>
+          <tr><td><button class="btn-yellow" id="projectDetails" data-project="0">Details</button></td><td>Project A</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="1">Details</button></td><td>Project B</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="2">Details</button></td><td>Project C</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="3">Details</button></td><td>Project D</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="4">Details</button></td><td>Project E</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
         </tbody>
       </table>
     </div>
@@ -63,9 +63,9 @@
     <div class="inner">
       <b class="navy">Edit Project</b>
       <form class="form" id="editProjectForm">
-        <div id="editProjectNameField"><label class="req" for="editProjectName">Project Name</label><input id="editProjectName" value="Meeting" required></div>
-        <div id="editProjectDeptField"><label class="req" for="editProjectDept">Department</label><select id="editProjectDept" required><option>DEPT. of Databases</option><option>DEPT. of Systems Development</option></select></div>
-        <div id="projectCreated"><label for="editCreatedDate">Created Date</label><input id="editCreatedDate" value="30/09/2026" readonly><label for="editCreatedBy">Created By</label><input id="editCreatedBy" value="22401076" readonly></div>
+        <div id="editProjectNameField"><label class="req" for="editProjectName">Project Name</label><input id="editProjectName" value="Project A" required></div>
+        <div id="editProjectDeptField"><label class="req" for="editProjectDept">Department</label><select id="editProjectDept" required><option>Department A</option><option>Department B</option></select></div>
+        <div id="projectCreated"><label for="editCreatedDate">Created Date</label><input id="editCreatedDate" value="30/09/2026" readonly><label for="editCreatedBy">Created By</label><input id="editCreatedBy" value="نادر الوادي" readonly></div>
         <div class="review-actions" id="projectActions"><button class="btn-dark" id="editProjectSave" type="submit">Save</button><button class="btn-yellow" id="deleteProject" type="button">Delete</button></div>
       </form>
     </div>
