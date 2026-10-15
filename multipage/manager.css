@@ -1,9 +1,19 @@
 .app{direction:ltr}
 .main{direction:ltr}
-.side{direction:ltr;width:200px}
-body{font-size:16px;direction:ltr;text-align:left}
-.side a{font-size:16px;padding:10px 12px}
-.guide-header h1{font-size:24px}
+.side{direction:ltr;width:243px;padding-top:0}
+body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#002855}
+.side a{font-size:14px;padding:10px 15px;min-height:40px}
+.side a.active{background:#090909}
+.guide-header{min-height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
+.reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
+.reward-brand>span{font-size:28px}
+.guide-header h1{color:#fff;font-size:18px}
+.reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
+.app{min-height:calc(100vh - 49px)}
+.box,.stat{border-color:#dbe4ef;border-radius:16px;box-shadow:0 4px 12px rgba(0,40,85,.06)}
+.hub-card{border-top-color:#002855}
+.btn-dark,.rpill.on,.chips button.on{background:#002855}
+.manager-heading{background:#fff;border-radius:16px;padding:18px 12px;box-shadow:0 4px 12px rgba(0,40,85,.06)}
 .guide-links{padding-bottom:90px}
 .footer{font-size:14px;direction:ltr;text-align:left}
 .btn,.btn-dark,.btn-yellow,.rpill,.chips button{font-size:14px}
@@ -21,6 +31,7 @@ body{font-size:16px;direction:ltr;text-align:left}
 #barNames{font-size:10px!important}
 #tip{font-size:16px;width:340px}
 #tip .nav button{font-size:14px}
+#tip .next{background:#002855}
 #tip .count{font-size:13px}
 #help{left:16px;right:auto;width:60px;height:60px;font-size:28px;font-weight:700;animation:guide-heartbeat 2.4s ease-in-out infinite;box-shadow:0 0 18px rgba(79,70,229,.55)}
 #help:hover,#help:focus-visible{animation-play-state:paused}
@@ -35,9 +46,9 @@ body{font-size:16px;direction:ltr;text-align:left}
 .manager-heading{text-align:center;margin-bottom:14px}
 .manager-heading h2{font-size:22px;margin:4px 0;color:#0b2a4a}
 .manager-heading p{margin:4px 0;color:#0b2a4a}
-.manager-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid #ddd;margin:16px 0 10px}
+.manager-tabs{display:flex;flex-wrap:wrap;gap:4px;border:1px solid #dbe4ef;border-radius:16px;padding:5px;background:#fff;margin:16px 0 10px}
 .manager-tabs button{background:none;border:0;padding:8px 12px;font-size:15px;color:#0b2a4a;cursor:pointer;border-bottom:2px solid transparent}
-.manager-tabs button.active{border-bottom-color:#fbbf24;font-weight:600}
+.manager-tabs button.active{border-bottom-color:transparent;border-radius:11px;background:#002855;color:#fff;font-weight:600}
 .table-scroll{overflow-x:auto}
 .manager-table{width:100%;border-collapse:collapse;direction:ltr;text-align:left;font-size:14px}
 .manager-table th{background:#f8fafc;color:#0b2a4a;font-weight:600}
@@ -139,7 +150,9 @@ body{font-size:16px;direction:ltr;text-align:left}
  .reward-screen #rewardPagination button{min-width:30px;padding:7px}
  .side{width:100%}
  .side a{font-size:14px}
- .guide-header h1{font-size:22px}
+ .guide-header{padding:8px 12px}
+ .guide-header h1{font-size:16px}
+ .reward-brand>span{font-size:20px}
  .card{width:100%}
  .cal th,.cal td,.ev{font-size:12px}
  .manager-table{min-width:720px}

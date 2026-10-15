@@ -353,6 +353,7 @@
     }
     wasTourOpen = true;
     const index = Number(byId("tipCount").textContent.split("/")[0]) - 1;
+    byId("tipNext").textContent = index === steps.length - 1 ? "End / إنهاء" : "Next →";
     const step = steps[index];
     if (cards) {
       const teamStep = step?.el === "teamTaskCard" || step?.el === "teamDetail";
@@ -367,6 +368,23 @@
   const observer = new MutationObserver(syncTour);
   observer.observe(tip, {attributes:true,attributeFilter:["hidden"]});
   observer.observe(byId("tipCount"), {childList:true});
+  function lastStep() {
+    return !tip.hidden && Number(byId("tipCount").textContent.split("/")[0]) === steps.length;
+  }
+  byId("tipNext").addEventListener("click", event => {
+    if (!lastStep()) return;
+    event.stopImmediatePropagation();
+    byId("tipX").click();
+  }, true);
+  addEventListener("keydown", event => {
+    if (event.key !== "ArrowRight" || !lastStep() || /INPUT|SELECT|TEXTAREA/.test(event.target.tagName)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    byId("tipX").click();
+  }, true);
+  listen("help", "click", () => {
+    while (Number(byId("tipCount").textContent.split("/")[0]) > 1) byId("tipBack").click();
+  });
 
   const welcome = document.createElement("dialog");
   welcome.className = "tour-welcome";
