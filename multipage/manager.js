@@ -231,7 +231,8 @@
       const timeMatches = timeFilter === 0 || (timeFilter === 1 ? date === "2026-10-06" : timeFilter === 2 ? date >= "2026-10-04" && date <= "2026-10-06" : date.startsWith("2026-10"));
       card.hidden = teamView || !timeMatches || (statusFilter !== 0 && taskStatuses[index] !== statusFilter) || (start && date < start) || (end && date > end) || !card.textContent.toLowerCase().includes(search);
     });
-    byId("emptyTasks").hidden = taskCards.some(card => !card.hidden);
+    byId("emptyTasks").hidden = teamView || taskCards.some(card => !card.hidden);
+    byId("emptyTeamTasks").hidden = !teamView;
     byId("stats").querySelectorAll("b").forEach((counter,index) => { counter.textContent = teamView ? "0" : [4,1,0,3,0][index]; });
     byId("statusF").querySelectorAll("button").forEach((button,index) => { button.textContent = `${["All","Submitted","Assigned","Needs review","Canceled"][index]} ${teamView ? 0 : [4,3,1,0,0][index]}`; });
   }
@@ -308,11 +309,11 @@
     wasTourOpen = true;
     const index = Number(byId("tipCount").textContent.split("/")[0]) - 1;
     const step = steps[index];
-    if (cards && step?.el !== "emptyTasks" && teamView) byId("myTasks").click();
+    if (cards && step?.el !== "emptyTeamTasks" && teamView) byId("myTasks").click();
     if (step?.modal === "reward") showTask(rewardTasks[0],false);
     else if (step?.modal === "project") showProject(projects[0],false);
     else closeModal(false);
-    if (step?.el === "emptyTasks") byId("teamTasks").click();
+    if (step?.el === "emptyTeamTasks") byId("teamTasks").click();
     if (step) byId(step.el)?.scrollIntoView({block:"center",behavior:"instant"});
   }
   const observer = new MutationObserver(syncTour);

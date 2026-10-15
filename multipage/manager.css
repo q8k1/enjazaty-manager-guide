@@ -1,16 +1,50 @@
+.app{direction:ltr}
+.main{direction:rtl}
+.side{direction:ltr;width:200px}
+body{font-size:16px}
+.side a{font-size:16px;padding:10px 12px}
+.guide-header h1{font-size:24px}
+.guide-links{padding-bottom:90px}
+.footer{font-size:14px}
+.btn,.btn-dark,.btn-yellow,.rpill,.chips button{font-size:14px}
+.form label,.form input,.form select,.form textarea{font-size:15px}
+.section-h,.stat span,.card .foot,.pill,.badge,.card h4 small{font-size:14px}
+.card h4{font-size:16px}
+.card{width:280px}
+.date-in{font-size:14px;padding:6px 8px}
+.date-in span{font-size:12px}
+.cal th,.cal td,.ev{font-size:14px}
+.modal .lbl{font-size:12px}
+.modal .fld{font-size:14px}
+.page [style*="font-size:11px"],.page [style*="font-size:10px"]{font-size:14px!important}
+.page [style*="font-size:18px"]{font-size:22px!important}
+#barNames{font-size:10px!important}
+#tip{font-size:16px;width:340px}
+#tip .nav button{font-size:14px}
+#tip .count{font-size:13px}
+#help{width:60px;height:60px;font-size:28px;font-weight:700;animation:guide-heartbeat 2.4s ease-in-out infinite;box-shadow:0 0 18px rgba(79,70,229,.55)}
+#help:hover,#help:focus-visible{animation-play-state:paused}
+@keyframes guide-heartbeat{
+ 0%,45%,100%{transform:scale(1);box-shadow:0 0 18px rgba(79,70,229,.55)}
+ 12%,30%{transform:scale(1.12);box-shadow:0 0 28px rgba(79,70,229,.8)}
+ 21%{transform:scale(1.03)}
+}
+@media(prefers-reduced-motion:reduce){
+ #help{animation:none}
+}
 .manager-heading{text-align:center;margin-bottom:14px}
-.manager-heading h2{font-size:18px;margin:4px 0;color:#0b2a4a}
+.manager-heading h2{font-size:22px;margin:4px 0;color:#0b2a4a}
 .manager-heading p{margin:4px 0;color:#0b2a4a}
 .manager-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid #ddd;margin:16px 0 10px}
-.manager-tabs button{background:none;border:0;padding:8px 12px;font-size:12px;color:#0b2a4a;cursor:pointer;border-bottom:2px solid transparent}
+.manager-tabs button{background:none;border:0;padding:8px 12px;font-size:15px;color:#0b2a4a;cursor:pointer;border-bottom:2px solid transparent}
 .manager-tabs button.active{border-bottom-color:#fbbf24;font-weight:600}
 .table-scroll{overflow-x:auto}
-.manager-table{width:100%;border-collapse:collapse;direction:ltr;text-align:left;font-size:11px}
+.manager-table{width:100%;border-collapse:collapse;direction:ltr;text-align:left;font-size:14px}
 .manager-table th{background:#f8fafc;color:#0b2a4a;font-weight:600}
 .manager-table th,.manager-table td{padding:10px 8px;border-bottom:1px solid #e5e7eb}
 .manager-table td{overflow-wrap:anywhere}
 .reward-points{display:flex;gap:4px}
-.reward-points button{background:#15803d;color:#fff;border:0;border-radius:4px;padding:5px 9px;cursor:pointer;font-size:11px}
+.reward-points button{background:#15803d;color:#fff;border:0;border-radius:4px;padding:5px 9px;cursor:pointer;font-size:14px}
 .reward-points button[aria-pressed="true"]{outline:2px solid #0b2a4a;outline-offset:2px}
 .pagination{display:flex;flex-wrap:wrap;align-items:center;gap:4px;justify-content:space-between;padding:12px;direction:ltr}
 .pagination .pages{display:flex;flex-wrap:wrap;gap:4px}
@@ -18,7 +52,7 @@
 .manager-form{border:1px solid #eee;border-left:3px solid #fbbf24;border-radius:6px;padding:4px 20px 16px}
 .manager-form textarea{width:100%}
 .manager-form fieldset{border:0;margin:14px 0 4px;padding:0}
-.manager-form legend{font-size:11px;color:#374151;margin-bottom:6px}
+.manager-form legend{font-size:15px;color:#374151;margin-bottom:6px}
 .manager-form .radio-options{display:flex;flex-wrap:wrap;gap:12px;direction:ltr}
 .manager-form .radio-options label{display:flex;align-items:center;gap:4px;margin:0}
 .manager-form input[type="radio"]{width:auto}
@@ -28,14 +62,19 @@
 .project-fields label{margin-top:4px}
 .btn-reject{color:#b91c1c;border-color:#b91c1c}
 .review-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.demo-note{font-size:11px;color:#6b7280;margin:10px 0}
-.demo-result{color:#0b2a4a;font-size:12px}
+.demo-note{font-size:14px;color:#6b7280;margin:10px 0}
+.demo-result{color:#0b2a4a;font-size:15px}
 .empty-state{text-align:center;padding:30px;margin:12px 0}
 .manager-modal .form{padding:0}
 .manager-modal .form label{margin-top:12px}
-.manager-modal .form input,.manager-modal .form select{font-size:11px}
+.manager-modal .form input,.manager-modal .form select{font-size:14px}
 @media(max-width:700px){
+ .side{width:100%}
+ .side a{font-size:14px}
+ .guide-header h1{font-size:22px}
+ .card{width:100%}
+ .cal th,.cal td,.ev{font-size:12px}
  .manager-table{min-width:720px}
- .manager-heading h2{font-size:16px}
+ .manager-heading h2{font-size:20px}
  .manager-form{padding:4px 12px 16px}
 }
