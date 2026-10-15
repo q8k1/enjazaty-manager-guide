@@ -6,7 +6,7 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
 .side a.active{background:#090909}
 .guide-header{min-height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
 .reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
-.reward-brand>span{font-size:28px}
+.university-logo{width:32px;height:32px;object-fit:contain;flex-shrink:0;font-size:8px;color:#fff}
 .guide-header h1{color:#fff;font-size:18px}
 .reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
 .app{min-height:calc(100vh - 49px)}
@@ -91,7 +91,6 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
 .reward-screen{background:#f4f7fa;color:#002855;font-size:13px}
 .reward-screen .guide-header{height:49px;padding:8px 18px;background:#002855;border:0;color:#fff;flex-wrap:nowrap}
 .reward-screen .reward-brand{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
-.reward-screen .reward-brand>span{font-size:28px}
 .reward-screen .guide-header h1{color:#fff;font-size:18px}
 .reward-screen .reward-account{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
 .reward-screen .app{min-height:calc(100vh - 49px)}
@@ -140,7 +139,6 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
  .reward-screen .side{width:100%}
  .reward-screen .guide-header{padding:8px 12px}
  .reward-screen .guide-header h1{font-size:16px}
- .reward-screen .reward-brand>span{font-size:20px}
  .reward-screen #reward{padding:12px}
  .reward-screen .manager-heading h2{font-size:22px}
  .reward-screen .manager-heading p{font-size:15px}
@@ -152,7 +150,7 @@ body{font-size:16px;direction:ltr;text-align:left;background:#f4f7fa;color:#0028
  .side a{font-size:14px}
  .guide-header{padding:8px 12px}
  .guide-header h1{font-size:16px}
- .reward-brand>span{font-size:20px}
+ .university-logo{width:28px;height:28px}
  .card{width:100%}
  .cal th,.cal td,.ev{font-size:12px}
  .manager-table{min-width:720px}
