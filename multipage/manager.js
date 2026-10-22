@@ -195,7 +195,7 @@
     event.preventDefault();
     const name = byId("projectName").value.trim();
     if (!name) { byId("projectName").focus(); return; }
-    projects.push({id:nextProjectId++,name,department:byId("projectDept").value,creator:"نادر الوادي",created:"06/10/2026",updater:"نادر الوادي",updated:"06/10/2026"});
+    projects.push({id:nextProjectId++,name,department:byId("projectDept").value,creator:"Employee 10",created:"06/10/2026",updater:"Employee 10",updated:"06/10/2026"});
     renderProjects(); event.target.reset();
     byId("projectResult").textContent = "Demo: project added. / توضيح: أُضيف المشروع.";
   });
@@ -205,7 +205,7 @@
     if (!selectedProject || !name) return;
     selectedProject.name = name;
     selectedProject.department = byId("editProjectDept").value;
-    selectedProject.updater = "نادر الوادي"; selectedProject.updated = "06/10/2026";
+    selectedProject.updater = "Employee 10"; selectedProject.updated = "06/10/2026";
     dismissModal(); renderProjects();
     byId("projectDetails")?.focus();
     byId("projectResult").textContent = "Demo: project updated. / توضيح: تم تحديث المشروع.";
