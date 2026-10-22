@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>2. 🎖 Add Task | دليل المسؤول — نظام إنجازاتي</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="manager.css">
+<script src="script.js" defer></script>
+<script src="manager.js" defer></script>
+</head>
+<body>
+<header class="guide-header">
+  <a class="reward-brand" href="index.html" aria-label="دليل المسؤول — جميع الأدلة"><img class="university-logo" src="../ku%20logo%20no%20background.png" alt="جامعة الكويت / Kuwait University" width="56" height="56"><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
+  <span class="reward-account"><span aria-hidden="true">♙</span> USER <span aria-hidden="true">⌄</span></span>
+</header>
+<div class="app">
+<nav class="side" aria-label="الأدلة">
+  <a href="01-home.html" id="nav-home">1. ⌂ Home</a>
+  <a href="02-add-task.html" id="nav-add" class="active" aria-current="page">2. 🎖 Add Task</a>
+  <a href="03-calendar.html" id="nav-cal">3. ▤ Calendar</a>
+  <a href="04-reward.html" id="nav-reward">4. ★ Reward</a>
+  <a href="05-assign-task.html" id="nav-assign">5. ＋ Assign Task</a>
+  <a href="06-view-enjazaty.html" id="nav-view">6. ☰ View Enjazaty</a>
+  <a href="07-settings.html" id="nav-settings">7. ⚙ Settings</a>
+</nav>
+<main class="main">
+    <section class="page" id="add">
+      <div class="box" style="padding:14px">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
+          <div style="background:#0b2a4a;color:#fbbf24;width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center">🏆</div>
+          <div><div class="navy" style="font-size:16px;font-weight:700;border-bottom:2px solid #fbbf24;display:inline-block">وثّق إنجازك</div><div style="font-size:11px;color:#6b7280">Add Your Achievement</div></div>
+        </div>
+        <div class="form" style="border:1px solid #eee;border-left:3px solid #fbbf24;border-radius:6px;padding:4px 20px 16px">
+          <div id="f-dept"><label class="req">Department</label><input value="Department A"></div>
+          <div id="f-cat"><label class="req">Task Category</label><select><option></option><option>Project A</option></select></div>
+          <div id="f-date"><label class="req">Task Date</label><input type="date"></div>
+          <div id="f-coll"><label>Collaborators</label><select style="background:#f5f5f5"><option></option></select></div>
+          <div id="f-type"><label class="req">Task Type</label>
+            <div class="chips"><button>DESIGN</button><button>DEVELOPMENT</button><button>DOCUMENTATION</button><button>MEETING</button><button>OTHER</button><button>SUPPORT</button><button>TROUBLESHOOT</button><button>مهام ادارية</button></div></div>
+          <div id="f-pri"><label class="req">Priority</label>
+            <div class="chips"><button style="color:#15803d">Low</button><button style="color:#b45309">Medium</button><button style="color:#b91c1c">High</button></div></div>
+          <div id="f-title"><label class="req">Task Title</label><input></div>
+          <div id="f-desc"><label class="req">Description</label><textarea></textarea></div>
+          <div id="f-obs"><label>Obstacle</label><textarea></textarea></div>
+          <div id="f-file"><label>File</label><div style="border:1px solid #d1d5db;border-radius:4px;padding:5px;font-size:11px">📁 Choose Files</div></div>
+        </div>
+      </div>
+      <button class="btn-dark" id="submitBtn" style="width:100%;margin-top:10px;padding:9px">Submit</button>
+    </section>
+<nav class="guide-links" aria-label="تتابع الأدلة">
+<a href="01-home.html" rel="prev">السابق: ⌂ Home</a>
+<a href="03-calendar.html" rel="next">التالي: ▤ Calendar</a>
+</nav>
+<footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+</main>
+</div>
+<div id="spot" hidden></div>
+<div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
+  <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
+  <div class="en" id="tipEn" lang="en"></div>
+  <div class="ar" id="tipAr"></div>
+  <div class="nav"><button class="back" id="tipBack">Back</button><span class="count" id="tipCount"></span><button class="next" id="tipNext">Next</button></div>
+</div>
+<button id="help" title="Show guide" aria-label="فتح الشرح التفاعلي">?</button>
+<script type="application/json" id="guide-steps">
+[
+{"page":"add","el":"nav-add","en":"Go to “Add Task” to document a new achievement.","ar":"انتقل إلى \"Add Task\" لتوثيق إنجاز جديد."},
+{"page":"add","el":"f-dept","en":"Your department is filled in automatically.","ar":"يتم تعبئة القسم تلقائياً."},
+{"page":"add","el":"f-cat","en":"Choose the task category (project).","ar":"اختر تصنيف المهمة (المشروع)."},
+{"page":"add","el":"f-date","en":"Pick the date the task was done.","ar":"اختر تاريخ إنجاز المهمة."},
+{"page":"add","el":"f-coll","en":"Optional: add colleagues who worked with you.","ar":"اختياري: أضف الزملاء الذين شاركوك المهمة."},
+{"page":"add","el":"f-type","en":"Select the type of task.","ar":"اختر نوع المهمة."},
+{"page":"add","el":"f-pri","en":"Choose the priority: Low, Medium or High.","ar":"حدد الأولوية: منخفضة، متوسطة أو عالية."},
+{"page":"add","el":"f-title","en":"Write a short, clear title.","ar":"اكتب عنواناً قصيراً وواضحاً."},
+{"page":"add","el":"f-desc","en":"Describe what you achieved.","ar":"اكتب وصفاً لما أنجزته."},
+{"page":"add","el":"f-obs","en":"Optional: mention any obstacles you faced.","ar":"اختياري: اذكر العوائق التي واجهتك."},
+{"page":"add","el":"f-file","en":"Optional: attach supporting files.","ar":"اختياري: أرفق ملفات داعمة."},
+{"page":"add","el":"submitBtn","en":"Click “Submit” to save your achievement. Fields marked * are required.","ar":"اضغط \"Submit\" لحفظ الإنجاز. الحقول المعلّمة بـ * إلزامية."}
+]
+</script>
+</body>
+</html>

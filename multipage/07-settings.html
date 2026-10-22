@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>7. ⚙ Settings | دليل المسؤول — نظام إنجازاتي</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="manager.css">
+<script src="script.js" defer></script>
+<script src="manager.js" defer></script>
+</head>
+<body>
+<header class="guide-header">
+  <a class="reward-brand" href="index.html" aria-label="دليل المسؤول — جميع الأدلة"><img class="university-logo" src="../ku%20logo%20no%20background.png" alt="جامعة الكويت / Kuwait University" width="56" height="56"><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
+  <span class="reward-account"><span aria-hidden="true">♙</span> USER <span aria-hidden="true">⌄</span></span>
+</header>
+<div class="app">
+<nav class="side" aria-label="الأدلة">
+  <a href="01-home.html" id="nav-home">1. ⌂ Home</a>
+  <a href="02-add-task.html" id="nav-add">2. 🎖 Add Task</a>
+  <a href="03-calendar.html" id="nav-cal">3. ▤ Calendar</a>
+  <a href="04-reward.html" id="nav-reward">4. ★ Reward</a>
+  <a href="05-assign-task.html" id="nav-assign">5. ＋ Assign Task</a>
+  <a href="06-view-enjazaty.html" id="nav-view">6. ☰ View Enjazaty</a>
+  <a href="07-settings.html" id="nav-settings" class="active" aria-current="page">7. ⚙ Settings</a>
+</nav>
+<main class="main">
+<section class="page" id="settings">
+  <div class="manager-heading"><h2>أضف مشروعًا جديدًا… وحقق المزيد ✨</h2><p lang="en">Add a New Project... Grow Your Achievements</p></div>
+  <form class="box form" id="projectForm" style="padding:14px">
+    <div class="project-fields">
+      <div id="projectNameField"><label class="req" for="projectName">Project Name</label><input id="projectName" required></div>
+      <div id="projectDeptField"><label class="req" for="projectDept">Department</label><select id="projectDept" required><option value="">Select department</option><option>Department A</option><option>Department B</option></select></div>
+      <button class="btn-dark" id="projectSave" type="submit">Save</button>
+    </div>
+  </form>
+  <div class="box" style="margin-top:14px">
+    <div class="table-scroll" id="projectTable">
+      <table class="manager-table" aria-label="المشاريع">
+        <thead><tr><th scope="col">Action</th><th scope="col">Project Name</th><th scope="col">Created By</th><th scope="col">Created On</th><th scope="col">Updated By</th><th scope="col">Updated On</th><th scope="col">Department</th></tr></thead>
+        <tbody id="projectRows">
+          <tr><td><button class="btn-yellow" id="projectDetails" data-project="0">Details</button></td><td>Project A</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="1">Details</button></td><td>Project B</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="2">Details</button></td><td>Project C</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="3">Details</button></td><td>Project D</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+          <tr><td><button class="btn-yellow" data-project="4">Details</button></td><td>Project E</td><td>نادر الوادي</td><td>30/09/2026</td><td>نادر الوادي</td><td>30/09/2026</td><td>Department A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination" id="projectRange">1 - 5</div>
+  </div>
+  <p class="demo-note">التغييرات توضيحية وتُعاد عند تحديث الصفحة / Demo changes reset on reload.</p>
+  <p class="demo-result" id="projectResult" role="status"></p>
+</section>
+<nav class="guide-links" aria-label="تتابع الأدلة"><a href="06-view-enjazaty.html" rel="prev">السابق: ☰ View Enjazaty</a><a href="index.html">جميع الأدلة</a></nav>
+<footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+</main>
+</div>
+<div class="overlay" id="managerOverlay">
+  <div class="modal manager-modal" id="managerModal" role="dialog" aria-modal="true" aria-labelledby="editProjectsTitle" tabindex="-1">
+    <div class="mh"><b id="editProjectsTitle">Edit Projects</b><button class="btn" data-manager-close aria-label="إغلاق تعديل المشروع">✕</button></div>
+    <div class="inner">
+      <b class="navy">Edit Project</b>
+      <form class="form" id="editProjectForm">
+        <div id="editProjectNameField"><label class="req" for="editProjectName">Project Name</label><input id="editProjectName" value="Project A" required></div>
+        <div id="editProjectDeptField"><label class="req" for="editProjectDept">Department</label><select id="editProjectDept" required><option>Department A</option><option>Department B</option></select></div>
+        <div id="projectCreated"><label for="editCreatedDate">Created Date</label><input id="editCreatedDate" value="30/09/2026" readonly><label for="editCreatedBy">Created By</label><input id="editCreatedBy" value="نادر الوادي" readonly></div>
+        <div class="review-actions" id="projectActions"><button class="btn-dark" id="editProjectSave" type="submit">Save</button><button class="btn-yellow" id="deleteProject" type="button">Delete</button></div>
+      </form>
+    </div>
+    <div style="border-top:1px solid #eee;padding:12px"><button class="btn" id="projectClose" data-manager-close>Close</button></div>
+  </div>
+</div>
+<div id="spot" hidden></div>
+<div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
+  <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
+  <div class="en" id="tipEn" lang="en"></div><div class="ar" id="tipAr"></div>
+  <div class="nav"><button class="back" id="tipBack">Back</button><span class="count" id="tipCount"></span><button class="next" id="tipNext">Next</button></div>
+</div>
+<button id="help" title="Show guide" aria-label="فتح الشرح التفاعلي">?</button>
+<script type="application/json" id="guide-steps">
+[
+{"page":"settings","el":"nav-settings","en":"Settings lets supervisors maintain the projects used as task categories.","ar":"تتيح Settings للمسؤول إدارة المشاريع المستخدمة لتصنيف المهام."},
+{"page":"settings","el":"projectNameField","en":"Enter the name of a new project.","ar":"أدخل اسم المشروع الجديد."},
+{"page":"settings","el":"projectDeptField","en":"Choose the department responsible for the project.","ar":"اختر القسم المسؤول عن المشروع."},
+{"page":"settings","el":"projectSave","en":"Save adds the project to the demonstration table.","ar":"تضيف Save المشروع إلى الجدول التوضيحي."},
+{"page":"settings","el":"projectTable","en":"The table shows each project's creator, creation date, last update and department.","ar":"يعرض الجدول منشئ المشروع وتاريخ الإنشاء وآخر تحديث والقسم."},
+{"page":"settings","el":"projectDetails","en":"Click the yellow Details button to edit a project.","ar":"اضغط زر Details الأصفر لتعديل المشروع."},
+{"page":"settings","el":"editProjectNameField","en":"Edit Projects opens the Edit Project form. Change the project name here.","ar":"تفتح Edit Projects نموذج Edit Project. عدّل اسم المشروع هنا.","modal":"project"},
+{"page":"settings","el":"editProjectDeptField","en":"Select the project's department.","ar":"حدد القسم الخاص بالمشروع.","modal":"project"},
+{"page":"settings","el":"projectCreated","en":"Created Date and Created By are read-only records of who added the project and when.","ar":"Created Date وCreated By بيانات للقراءة فقط توضح من أضاف المشروع ومتى.","modal":"project"},
+{"page":"settings","el":"projectActions","en":"Save keeps your edits; Delete removes the project. This guide changes demo data only.","ar":"تحفظ Save التعديلات، وتحذف Delete المشروع. يغيّر هذا الدليل البيانات التجريبية فقط.","modal":"project"},
+{"page":"settings","el":"projectClose","en":"Close returns to Settings. You have completed the supervisor guide! 🎉","ar":"تعيدك Close إلى Settings. أكملت دليل المسؤول! 🎉","modal":"project"}
+]
+</script>
+</body>
+</html>

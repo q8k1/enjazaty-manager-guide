@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>6. ☰ View Enjazaty | دليل المسؤول — نظام إنجازاتي</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="manager.css">
+<script src="script.js" defer></script>
+<script src="tasks.js" defer></script>
+<script src="manager.js" defer></script>
+</head>
+<body>
+<header class="guide-header">
+  <a class="reward-brand" href="index.html" aria-label="دليل المسؤول — جميع الأدلة"><img class="university-logo" src="../ku%20logo%20no%20background.png" alt="جامعة الكويت / Kuwait University" width="56" height="56"><h1><span dir="rtl">إنجازاتي</span> | Enjazaty</h1></a>
+  <span class="reward-account"><span aria-hidden="true">♙</span> USER <span aria-hidden="true">⌄</span></span>
+</header>
+<div class="app">
+<nav class="side" aria-label="الأدلة">
+  <a href="01-home.html" id="nav-home">1. ⌂ Home</a>
+  <a href="02-add-task.html" id="nav-add">2. 🎖 Add Task</a>
+  <a href="03-calendar.html" id="nav-cal">3. ▤ Calendar</a>
+  <a href="04-reward.html" id="nav-reward">4. ★ Reward</a>
+  <a href="05-assign-task.html" id="nav-assign">5. ＋ Assign Task</a>
+  <a href="06-view-enjazaty.html" id="nav-view" class="active" aria-current="page">6. ☰ View Enjazaty</a>
+  <a href="07-settings.html" id="nav-settings">7. ⚙ Settings</a>
+</nav>
+<main class="main">
+    <section class="page" id="view">
+      <div style="text-align:center;margin-bottom:12px">
+        <div class="navy" style="font-size:18px;font-weight:700">🎖 إنجازك يستحق التقدير</div>
+        <div class="navy">Your Achievement Deserves Recognition 🎖</div>
+      </div>
+      <div style="display:flex;gap:8px" id="stats">
+        <div class="stat"><b class="navy">4</b><span>All Tasks</span></div>
+        <div class="stat"><b style="color:#4338ca">1</b><span>Assigned</span></div>
+        <div class="stat"><b style="color:#b45309">0</b><span>Waiting on review</span></div>
+        <div class="stat"><b style="color:#15803d">3</b><span>Submitted</span></div>
+        <div class="stat"><b style="color:#b91c1c">0</b><span>Canceled</span></div>
+      </div>
+      <div class="manager-tabs" id="taskTabs" role="group" aria-label="نطاق المهام">
+        <button class="active" id="myTasks" aria-pressed="true">My tasks</button>
+        <button id="teamTasks" aria-pressed="false">Supervisee Tasks</button>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div id="timeF"><button class="rpill on">All</button> <button class="rpill">Today</button> <button class="rpill">This week</button> <button class="rpill">This month</button></div>
+        <div id="rangeF" style="font-size:10px">From <input type="date" style="font-size:10px"> To <input type="date" style="font-size:10px"> <button class="rpill">Clear</button></div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;margin:10px 0">
+        <input id="searchF" placeholder="Search title, detail or category" style="flex:1;border:1px solid #d1d5db;border-radius:16px;padding:6px 10px;font-size:11px">
+        <span id="statusF"><button class="rpill on">All 4</button> <button class="rpill">Submitted 3</button> <button class="rpill">Assigned 1</button> <button class="rpill">Needs review 0</button> <button class="rpill">Canceled 0</button></span>
+        <span id="viewT"><button class="btn" style="background:#0b2a4a;color:#fff">▦</button><button class="btn">≡</button></span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap" id="cards">
+        <div class="card"><h4>تحديث بسيط <small>1 score</small></h4><div><span class="badge">Submitted</span></div><div style="font-size:11px">تنفيذ تحديث عام.</div><div><span class="pill">Category <b>Project A</b></span><span class="pill">Priority <b>Low</b></span></div><div class="foot">06 Oct 2026 <button class="btn-yellow">Open</button></div></div>
+        <div class="card blue"><h4>Prepare a document <small>0 score</small></h4><div><span class="badge req">Request</span></div><div style="font-size:11px">Prepare a short document.</div><div><span class="pill">Category <b>Project A</b></span><span class="pill">Priority <b>Medium</b></span></div><div class="foot">29 Sep 2026 <button class="btn-yellow">Open</button></div></div>
+        <div class="card"><h4>Routine check <small>2 score</small></h4><div><span class="badge">Submitted</span></div><div style="font-size:11px">Completed a routine check.</div><div><span class="pill">Category <b>Project A</b></span><span class="pill">Priority <b>Low</b></span></div><div class="foot">09 Sep 2026 <button class="btn-yellow">Open</button></div></div>
+        <div class="card" id="launchCard"><h4>Project update <small>3 score</small></h4><div><span class="badge">Submitted</span></div><div style="font-size:11px">Completed a general update.</div><div><span class="pill">Category <b>Project A</b></span><span class="pill">Priority <b>High</b></span></div><div class="foot">19 Aug 2026 <button class="btn-yellow" id="launchOpen">Open</button></div></div>
+      </div>
+      <div class="task-grid" id="teamCards" hidden></div>
+      <div class="box empty-state" id="emptyTasks" hidden><b>Add your first achievement</b><p>أضف إنجازك الأول لعرضه هنا.</p><a class="btn-dark" href="02-add-task.html">+ Add Enjaz / إضافة إنجاز</a></div>
+      <div class="box empty-state" id="emptyTeamTasks" hidden><b>No team tasks to display</b><p>لا توجد مهام لأعضاء الفريق لعرضها.</p></div>
+    </section>
+<nav class="guide-links" aria-label="تتابع الأدلة">
+<a href="05-assign-task.html" rel="prev">السابق: ＋ Assign Task</a>
+<a href="07-settings.html" rel="next">التالي: ⚙ Settings</a>
+</nav>
+<footer class="footer">© 2026 جامعة الكويت - مركز نظم المعلومات.</footer>
+</main>
+</div>
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="mh"><b>Task</b><button class="btn" id="mClose" style="padding:0 6px">✕</button></div>
+    <div class="inner" id="mInner">
+      <div style="display:flex;justify-content:space-between">
+        <div><div class="lbl" style="margin-top:0">Enjaz Details</div>
+          <div class="navy" id="mTitle" style="font-size:15px;font-weight:700"></div>
+          <div style="font-size:11px">Date <b id="mDate"></b></div>
+          <div style="font-size:11px">Created by <b>نادر الوادي</b></div></div>
+        <div><span class="badge" id="mStatus">Submitted</span></div>
+      </div>
+      <hr style="border:0;border-top:1px solid #eee">
+      <div id="mDept"><div class="lbl">Department</div><div class="fld">Department A</div></div>
+      <div style="display:flex;gap:10px" id="mProj">
+        <div style="flex:1"><div class="lbl">Project</div><div class="fld">Project A</div></div>
+        <div style="flex:1"><div class="lbl">Priority</div><div class="fld" id="mPri"></div></div>
+      </div>
+      <div><div class="lbl">Collaborators</div><div class="fld"></div></div>
+      <div id="mDetail"><div class="lbl">Achievement Detail</div><div class="fld area" id="mDesc"></div></div>
+      <div><div class="lbl">Obstacles</div><div class="fld area"></div></div>
+    </div>
+    <div class="inner" id="mFile" style="border-left:1px solid #e5e7eb;padding:0">
+      <div style="padding:10px;background:#f8fafc;border-bottom:1px solid #eee"><b class="navy">File</b></div>
+      <div style="text-align:center;padding:16px;font-size:11px"><b>No files attached</b><br>This task has no supporting documents.</div>
+    </div>
+    <div style="border-top:1px solid #eee;padding:12px"><button class="btn" id="mClose2">Close</button></div>
+  </div>
+</div>
+<div class="overlay" id="managerOverlay">
+  <div class="modal manager-modal" id="managerModal" role="dialog" aria-modal="true" aria-labelledby="teamDetailTitle" tabindex="-1">
+    <div class="mh"><b>Team Task / مهمة الفريق</b><button class="btn" data-manager-close aria-label="إغلاق تفاصيل المهمة">✕</button></div>
+    <div class="inner" id="teamDetail">
+      <div class="lbl">Task Title</div><div class="fld" id="teamDetailTitle"></div>
+      <div class="lbl">Employee</div><div class="fld" id="teamDetailEmployee" dir="auto"></div>
+      <div class="lbl">Task Date</div><div class="fld" id="teamDetailDate"></div>
+      <div class="lbl">Task Type</div><div class="fld" id="teamDetailType"></div>
+      <div class="lbl">Priority</div><div class="fld" id="teamDetailPriority"></div>
+      <div class="lbl">Status</div><div class="fld">Submitted</div>
+      <div class="lbl">Achievement Detail</div><div class="fld area" id="teamDetailDescription"></div>
+    </div>
+    <div class="inner"><b class="navy">File</b><p>No files attached / لا توجد ملفات مرفقة</p></div>
+    <div style="border-top:1px solid #eee;padding:12px"><button class="btn" data-manager-close>Close</button></div>
+  </div>
+</div>
+<div id="spot" hidden></div>
+<div id="tip" role="dialog" aria-modal="true" aria-label="الشرح التفاعلي" hidden>
+  <button class="x" id="tipX" aria-label="إغلاق الشرح">✕</button>
+  <div class="en" id="tipEn" lang="en"></div>
+  <div class="ar" id="tipAr"></div>
+  <div class="nav"><button class="back" id="tipBack">Back</button><span class="count" id="tipCount"></span><button class="next" id="tipNext">Next</button></div>
+</div>
+<button id="help" title="Show guide" aria-label="فتح الشرح التفاعلي">?</button>
+<script type="application/json" id="guide-steps">
+[
+{"page":"view","el":"nav-view","en":"“View Enjazaty” lists all your tasks in one place.","ar":"تعرض صفحة \"View Enjazaty\" جميع مهامك في مكان واحد."},
+{"page":"view","el":"stats","en":"These counters summarize your tasks by status.","ar":"تلخص هذه العدادات مهامك حسب الحالة."},
+{"page":"view","el":"myTasks","en":"My tasks shows your own achievements and tasks assigned to you.","ar":"تعرض My tasks إنجازاتك الشخصية والمهام المسندة إليك."},
+{"page":"view","el":"teamTasks","en":"Supervisee Tasks shows your team members' tasks. This tab is available only to supervisors.","ar":"تعرض Supervisee Tasks مهام أعضاء فريقك. هذا التبويب متاح للمسؤول فقط."},
+{"page":"view","el":"timeF","en":"Quick filters: All, Today, This week or This month.","ar":"فلاتر سريعة: الكل، اليوم، هذا الأسبوع أو هذا الشهر."},
+{"page":"view","el":"rangeF","en":"Or choose a custom date range, then “Clear” to reset.","ar":"أو اختر فترة مخصصة، ثم \"Clear\" لإعادة الضبط."},
+{"page":"view","el":"searchF","en":"Search by title, detail or category.","ar":"ابحث بالعنوان أو التفاصيل أو التصنيف."},
+{"page":"view","el":"statusF","en":"Filter tasks by status.","ar":"صفِّ المهام حسب الحالة."},
+{"page":"view","el":"viewT","en":"Switch between card view and list view.","ar":"بدّل بين عرض البطاقات وعرض القائمة."},
+{"page":"view","el":"teamTaskCard","en":"These team cards contain the tasks shown on Reward (page 4), including the employee, type, priority and date. Use Open to view details. There is no Add Enjaz action in this tab.","ar":"تعرض بطاقات الفريق مهام Reward (الصفحة 4) مع الموظف والنوع والأولوية والتاريخ. اضغط Open للتفاصيل. لا يوجد خيار إضافة إنجاز في هذا التبويب."},
+{"page":"view","el":"teamDetail","en":"The team task popup shows the selected employee's task details. Close it to return to the team cards.","ar":"تعرض النافذة تفاصيل مهمة الموظف المحددة. أغلقها للعودة إلى بطاقات الفريق.","modal":"team"},
+{"page":"view","el":"launchCard","en":"Each card shows a task with its score. Click “Open” for details.","ar":"كل بطاقة تعرض مهمة ونقاطها. اضغط \"Open\" للتفاصيل."},
+{"page":"view","el":"mInner","en":"Here are the full task details. Continue to Settings to manage projects.","ar":"هذه تفاصيل المهمة كاملة. تابع إلى Settings لإدارة المشاريع.","modal":"launch"}
+]
+</script>
+</body>
+</html>
