@@ -7,9 +7,9 @@
 <title>4. ★ Reward | دليل المسؤول — نظام إنجازاتي</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="manager.css">
-<script src="script.js" defer></script>
-<script src="tasks.js" defer></script>
-<script src="manager.js" defer></script>
+<script src="script.js?v=2" defer></script>
+<script src="tasks.js?v=2" defer></script>
+<script src="manager.js?v=2" defer></script>
 </head>
 <body class="reward-screen">
 <header class="guide-header">
@@ -43,13 +43,13 @@
       <table class="manager-table" aria-label="إنجازات الفريق">
         <thead><tr><th scope="col">Details</th><th scope="col">Employee</th><th scope="col">Task</th><th scope="col">Task Type</th><th scope="col">Priority</th><th scope="col">Date</th><th scope="col">Reward</th></tr></thead>
         <tbody id="rewardRows">
-          <tr><td><button class="btn-yellow" id="rewardDetails" data-detail="0">Details</button></td><td>سارة الورد</td><td>Routine maintenance</td><td>TROUBLESHOOT</td><td>High</td><td>07 Oct 2026</td><td><div class="reward-points" id="rewardPoints"><button data-reward="0" data-points="1">1</button><button data-reward="0" data-points="2">2</button><button data-reward="0" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="1">Details</button></td><td>عمر السحاب</td><td>General request</td><td>OTHER</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="1" data-points="1">1</button><button data-reward="1" data-points="2">2</button><button data-reward="1" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="2">Details</button></td><td>ليان النور</td><td>Service check</td><td>TROUBLESHOOT</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="2" data-points="1">1</button><button data-reward="2" data-points="2">2</button><button data-reward="2" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="3">Details</button></td><td>يوسف الروضة</td><td>Follow-up</td><td>SUPPORT</td><td>Medium</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="3" data-points="1">1</button><button data-reward="3" data-points="2">2</button><button data-reward="3" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="4">Details</button></td><td>هند الربيع</td><td>Issue review</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="4" data-points="1">1</button><button data-reward="4" data-points="2">2</button><button data-reward="4" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="5">Details</button></td><td>فارس القمر</td><td>Routine update</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="5" data-points="1">1</button><button data-reward="5" data-points="2">2</button><button data-reward="5" data-points="3">3</button></div></td></tr>
-          <tr><td><button class="btn-yellow" data-detail="6">Details</button></td><td>مها النسيم</td><td>General support</td><td>SUPPORT</td><td>Medium</td><td>05 Oct 2026</td><td><div class="reward-points"><button data-reward="6" data-points="1">1</button><button data-reward="6" data-points="2">2</button><button data-reward="6" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" id="rewardDetails" data-detail="0">Details</button></td><td>Employee 1</td><td>Routine maintenance</td><td>TROUBLESHOOT</td><td>High</td><td>07 Oct 2026</td><td><div class="reward-points" id="rewardPoints"><button data-reward="0" data-points="1">1</button><button data-reward="0" data-points="2">2</button><button data-reward="0" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="1">Details</button></td><td>Employee 2</td><td>General request</td><td>OTHER</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="1" data-points="1">1</button><button data-reward="1" data-points="2">2</button><button data-reward="1" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="2">Details</button></td><td>Employee 3</td><td>Service check</td><td>TROUBLESHOOT</td><td>Medium</td><td>07 Oct 2026</td><td><div class="reward-points"><button data-reward="2" data-points="1">1</button><button data-reward="2" data-points="2">2</button><button data-reward="2" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="3">Details</button></td><td>Employee 4</td><td>Follow-up</td><td>SUPPORT</td><td>Medium</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="3" data-points="1">1</button><button data-reward="3" data-points="2">2</button><button data-reward="3" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="4">Details</button></td><td>Employee 5</td><td>Issue review</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="4" data-points="1">1</button><button data-reward="4" data-points="2">2</button><button data-reward="4" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="5">Details</button></td><td>Employee 6</td><td>Routine update</td><td>SUPPORT</td><td>High</td><td>06 Oct 2026</td><td><div class="reward-points"><button data-reward="5" data-points="1">1</button><button data-reward="5" data-points="2">2</button><button data-reward="5" data-points="3">3</button></div></td></tr>
+          <tr><td><button class="btn-yellow" data-detail="6">Details</button></td><td>Employee 7</td><td>General support</td><td>SUPPORT</td><td>Medium</td><td>05 Oct 2026</td><td><div class="reward-points"><button data-reward="6" data-points="1">1</button><button data-reward="6" data-points="2">2</button><button data-reward="6" data-points="3">3</button></div></td></tr>
         </tbody>
       </table>
     </div>
@@ -68,7 +68,7 @@
   <div class="modal manager-modal" id="managerModal" role="dialog" aria-modal="true" aria-labelledby="rewardModalTitle" tabindex="-1">
     <div class="mh"><b id="rewardModalTitle">Details</b><button class="btn" data-manager-close aria-label="إغلاق التفاصيل">✕</button></div>
     <div class="inner" id="rewardInfo" dir="ltr">
-      <div class="lbl">Emp Name</div><div class="fld" id="detailEmployee">سارة الورد</div>
+      <div class="lbl">Emp Name</div><div class="fld" id="detailEmployee">Employee 1</div>
       <div class="lbl">Task Date</div><div class="fld" id="detailDate">07 Oct 2026</div>
       <div class="lbl">Tasktype</div><div class="fld" id="detailType">TROUBLESHOOT</div>
       <div class="lbl">Task Title</div><div class="fld" id="detailTitle">Routine maintenance</div>
